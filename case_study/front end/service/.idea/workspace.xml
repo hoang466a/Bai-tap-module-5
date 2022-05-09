@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78afce57-d360-4d08-b264-33f39850f014" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../customer/list/bootstrap-css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit/house.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit/house.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit/room.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit/villa.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit/villa.html" afterDir="false" />
-    </list>
+    <list default="true" id="78afce57-d360-4d08-b264-33f39850f014" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../customer/list/list.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ss3_angular_overview/thuc_hanh/product" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="SvnConfiguration">
@@ -67,6 +62,7 @@
       <updated>1651717139056</updated>
       <workItem from="1651717140351" duration="11366000" />
       <workItem from="1652067989934" duration="995000" />
+      <workItem from="1652080362644" duration="65000" />
     </task>
     <servers />
   </component>
@@ -86,10 +82,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="462" y="105" key="FileChooserDialogImpl" timestamp="1652068010861">
+    <state x="462" y="105" key="FileChooserDialogImpl" timestamp="1652080425346">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1652068010861" />
+    <state x="462" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1652080425346" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1651719033423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

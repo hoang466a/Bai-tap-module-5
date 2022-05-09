@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-using-bootstrap"
+    }
+  },
+  "defaultProject": "angular-using-bootstrap",
+  "cli": {
+    "analytics": "bc1aabe4-9721-4beb-afde-13aad16b56d5"
+  }
 }
