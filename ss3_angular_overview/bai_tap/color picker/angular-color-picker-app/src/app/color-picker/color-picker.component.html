@@ -1,0 +1,14 @@
+<p>color-picker aloha</p>
+<div>
+  <p>choose your color</p>
+  <select [(ngModel)]="colorFont">
+  <option value="red">red</option>
+    <option value="white">white</option>
+    <option value="blue">blue</option>
+    <option value="brown">brown</option>
+  </select>
+</div>
+<div>
+  <p [ngStyle]="{'color':colorFont}">aloha</p>
+</div>
+
