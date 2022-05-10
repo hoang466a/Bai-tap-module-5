@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <title>Title</title>
+  <script src="js/bootstrap.bundle.js"></script>
+</head>
+
+<body>
+<center> <h2>Create Contract</h2></center>
+<p>
+  <a href="">
+    Back to contract list
+  </a>
+</p>
+<div class="m-4">
+  <form action="" object="" method="POST" >
+    <input type="hidden" field=""/>
+    <div class="mb-3">
+      <label class="form-label" for="contractStartDate">Contract Start Date</label>
+      <input type="date" class="form-control" id="contractStartDate" placeholder="contract start date" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="contractEndDate">Contract End Date</label>
+      <input type="date" class="form-control" id="contractEndDate" placeholder="contract end date" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="contractDeposit">Contract Deposit</label>
+      <input type="text" class="form-control" id="contractDeposit" placeholder="contract deposit" required>
+    </div>
+    <label class="form-label" for="employeeList">Employee List</label>
+    <select class="form-select mb-3" aria-label=".form-select-lg example">
+      <option value="nguyenthia">Nguyễn Văn A</option>
+      <option value="nguyenthib">Nguyễn Thị B</option>
+      <option value="nguyenthic">Nguyễn Thị C</option>
+    </select>
+    <label class="form-label" for="serviceList">Service List</label>
+    <select class="form-select mb-3" aria-label=".form-select-lg example">
+      <option value="nguyenthia">House 1</option>
+      <option value="nguyenthib">Villa 1</option>
+      <option value="nguyenthic">Room 1</option>
+    </select>
+    <input type="submit" value="Create"/>
+  </form>
+</div>
+</body>
+</html>
