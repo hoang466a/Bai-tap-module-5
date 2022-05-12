@@ -1,0 +1,52 @@
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+<div>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" formControlName="email">
+  <p style="color: red" *ngIf="((signInForm.get('email').hasError('required'))&&
+    (signInForm.get('email').touched)) ||signInForm.get('email').dirty">Email bắt buộc nhập</p>
+  <p style="color: red" *ngIf="((signInForm.get('email').hasError('email'))&&
+    (signInForm.get('email').touched)) ||signInForm.get('email').dirty">Email không đúng định dạng</p>
+</div>
+<div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" formControlName="password">
+  <p style="color: red" *ngIf="((signInForm.get('password').hasError('required'))&&
+    (signInForm.get('password').touched)) ||signInForm.get('password').dirty">Password bắt buộc nhập</p>
+  <p style="color: red" *ngIf="((signInForm.get('password').hasError('minlength'))&&
+    (signInForm.get('password').touched)) ||signInForm.get('password').dirty">Password phải dài tối thiểu 6 kí tự</p>
+</div>
+
+  <div>
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+    <p style="color: red" *ngIf="((signInForm.get('confirmPassword').hasError('required'))&&
+    (signInForm.get('confirmPassword').touched)) ||signInForm.get('confirmPassword').dirty">Password bắt buộc nhập</p>
+    <p style="color: red" *ngIf="((signInForm.get('confirmPassword').hasError('minlength'))&&
+    (signInForm.get('confirmPassword').touched)) ||signInForm.get('confirmPassword').dirty">Password phải dài tối thiểu 6 kí tự</p>
+    <p style="color: red" *ngIf="((signInForm.get('confirmPassword').hasError('notmatch0'))&&
+    (signInForm.get('confirmPassword').touched)) ||signInForm.get('confirmPassword').dirty">Password không khớp</p>
+  </div>
+  <p>
+    <label for="country">Country</label>
+    <input type="text" id="country" name="country" formControlName="country">
+  </p>
+  <p>
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age" formControlName="age">
+  </p>
+  <p>
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" formControlName="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </p>
+  <p>
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" formControlName="phone">
+  </p>
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>

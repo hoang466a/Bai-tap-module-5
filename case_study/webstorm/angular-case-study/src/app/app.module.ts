@@ -14,7 +14,6 @@ import { EditCustomerComponent } from './customer/edit-customer/edit-customer.co
 import { CreateCustomerComponent } from './customer/create-customer/create-customer.component';
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
 import { ListContractComponent } from './contract/list-contract/list-contract.component';
-import { RoomComponent } from './room/room.component';
 import { CreateServiceRoomComponent } from './service-furama/create-service-room/create-service-room.component';
 import { CreateServiceVillaComponent } from './service-furama/create-service-villa/create-service-villa.component';
 import { EditServiceHouseComponent } from './service-furama/edit-service-house/edit-service-house.component';
@@ -34,7 +33,6 @@ import { EditServiceVillaComponent } from './service-furama/edit-service-villa/e
     CreateCustomerComponent,
     CreateContractComponent,
     ListContractComponent,
-    RoomComponent,
     CreateServiceRoomComponent,
     CreateServiceVillaComponent,
     EditServiceHouseComponent,
