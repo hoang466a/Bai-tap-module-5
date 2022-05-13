@@ -26,23 +26,19 @@
     <th>Start Date</th>
     <th>End Date</th>
     <th>Deposit</th>
-    <th>Employee</th>
-    <th>Customer</th>
-    <th>Service</th>
+    <th>Total Money</th>
     <th>Edit</th>
     <th>Delete</th>
     <th>View</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>12345</td>
-    <td>15-10-1996</td>
-    <td>19-10-1996</td>
-    <td>500.000 VND</td>
-    <td>Đặng Văn C</td>
-    <td>Nguyễn Văn A</td>
-    <td>House 1</td>
+  <tr *ngFor="let contract of contractList">
+    <td>{{contract.contractId}}</td>
+    <td>{{contract.contractStartDate}}</td>
+    <td>{{contract.contractEndDate}}</td>
+    <td>{{contract.contractDeposit}}</td>
+    <td>{{contract.contractTotalMoney}}</td>
     <td><a href="" class="btn btn-info">Edit</a></td>
     <td><a href="" class="btn btn-success">Edit</a></td>
     <td><a href="" class="btn btn-info">View</a></td>

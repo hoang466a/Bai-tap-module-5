@@ -1,6 +1,7 @@
 export interface IContract {
   contractId: string;
-  contractStartDate: Date;
-  contractEndDate: Date;
-
+  contractStartDate: string;
+  contractEndDate: string;
+  contractDeposit: string;
+  contractTotalMoney: string;
 }
