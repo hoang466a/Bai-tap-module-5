@@ -70,7 +70,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3 mt-4" *ngFor="let faci of facilityList">
+    <div class="col-3 mt-4" *ngFor="let faci of facilityList | paginate: { itemsPerPage: 3, currentPage: p }">
       <div class="col-item">
 
         <div class="photo"><img
@@ -104,7 +104,9 @@
       </div>
     </div>
 
-
+    <div>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
 
 
 

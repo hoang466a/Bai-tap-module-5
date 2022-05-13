@@ -9,9 +9,11 @@ import {ContractServiceService} from '../../../services/contract-service.service
 })
 export class ListContractComponent implements OnInit {
   contractList: Contract[];
+  p: number = 1;
+
 
   constructor(private contractServiceService:ContractServiceService) {this.contractList= contractServiceService.contr() }
-
+  collection: any[] = this.contractList;
   ngOnInit(): void {
   }
 

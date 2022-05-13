@@ -9,8 +9,9 @@ import {CustomerServiceService} from '../../../services/customer-service.service
 })
 export class ListCustomerComponent implements OnInit {
   customerList: Customer[];
+  p: number = 1;
   constructor(private customerService: CustomerServiceService) {this.customerList = customerService.cusList(); }
-
+  collection: any[] = this.customerList;
   ngOnInit(): void {
   }
 

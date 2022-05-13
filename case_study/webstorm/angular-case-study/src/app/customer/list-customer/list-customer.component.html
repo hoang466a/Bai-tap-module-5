@@ -28,7 +28,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let cus of customerList">
+  <tr *ngFor="let cus of customerList |paginate: { itemsPerPage: 3, currentPage: p ">
     <td>{{cus.customerName}}</td>
     <td>{{cus.customerBirthday}}</td>
     <td>{{cus.customerGender}}?"Nam"</td>
@@ -44,10 +44,7 @@
   </tbody>
 </table>
 <div>
-  <a href="">Previous</a>
-  <span>1</span> /
-  <span>5</span>
-  <a href="">Next</a>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 </body>
 

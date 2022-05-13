@@ -33,7 +33,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let contract of contractList">
+  <tr *ngFor="let contract of contractList | paginate: { itemsPerPage: 3, currentPage: p }">
     <td>{{contract.contractId}}</td>
     <td>{{contract.contractStartDate}}</td>
     <td>{{contract.contractEndDate}}</td>
@@ -46,10 +46,7 @@
   </tbody>
 </table>
 <div>
-  <a href="">Previous</a>
-  <span>1</span> /
-  <span>5</span>
-  <a href="">Next</a>
+  <<pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 </body>
 </html>

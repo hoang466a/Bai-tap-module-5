@@ -18,6 +18,7 @@ import { CreateServiceRoomComponent } from './service-furama/create-service-room
 import { CreateServiceVillaComponent } from './service-furama/create-service-villa/create-service-villa.component';
 import { EditServiceHouseComponent } from './service-furama/edit-service-house/edit-service-house.component';
 import { EditServiceVillaComponent } from './service-furama/edit-service-villa/edit-service-villa.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -38,10 +39,11 @@ import { EditServiceVillaComponent } from './service-furama/edit-service-villa/e
     EditServiceHouseComponent,
     EditServiceVillaComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgxPaginationModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
