@@ -5,11 +5,11 @@ import {ListServiceComponent} from './service-furama/list-service/list-service.c
 
 const routes: Routes = [
 
-  {path:'', component: ListServiceComponent }
+  {path: '', component: ListServiceComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

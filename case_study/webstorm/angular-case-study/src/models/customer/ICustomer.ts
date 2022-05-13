@@ -2,7 +2,7 @@ export interface ICustomer {
   customerId: number;
   customerName: string;
   customerCode: string;
-  customerBirthday: Date;
+  customerBirthday: string;
   customerGender: boolean;
   customerIdCard: string;
   customerPhone: string;

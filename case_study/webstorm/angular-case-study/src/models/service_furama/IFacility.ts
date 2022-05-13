@@ -7,10 +7,10 @@ export interface IFacility {
   serviceArea: string;
   serviceCost: string;
   serviceMaxPeople: string;
-  rentType: RentType;
+  rentType: string;
   standardRoom: string;
   descriptionOtherConvenience: string;
   poolArea: string;
   numberOfFloor: string;
-  serviceType: ServiceType;
+  serviceType: string;
 }

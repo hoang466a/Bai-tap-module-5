@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {IFacility} from "../../class/interface/facility";
-import {IAccompaniedService} from "../../class/interface/accompanied-service";
+import {Facility} from '../../../models/service_furama/Facility';
+import {FacilityServiceService} from '../../../services/facility-service.service';
+
+
 
 @Component({
   selector: 'app-list-service',
@@ -8,10 +10,9 @@ import {IAccompaniedService} from "../../class/interface/accompanied-service";
   styleUrls: ['./list-service.component.css']
 })
 export class ListServiceComponent implements OnInit {
-  facilityList:IFacility[];
-  accompaniedServiceList : IAccompaniedService[];
-  let accSer= IAccompaniedService;
-  constructor() { }
+  facilityList: Facility[];
+
+  constructor(private facilityService: FacilityServiceService) {this.facilityList = facilityService.faciList(); }
 
   ngOnInit(): void {
   }

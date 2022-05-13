@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css"/>
-  <link rel="stylesheet" href="bootstrap-css.css">
-  <title>Title</title>
-  <script src="js/bootstrap.bundle.js"></script>
-</head>
 
 <body>
 <h3>Customer List</h3>
@@ -38,15 +28,15 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>Nam</td>
-    <td>15-10-1996</td>
-    <td>Nam</td>
-    <td>KH-0345</td>
-    <td>123458784</td>
-    <td>0912546875</td>
-    <td>aloha@gmail.com</td>
-    <td>300 Điện Biên Phủ</td>
+  <tr *ngFor="let cus of customerList">
+    <td>{{cus.customerName}}</td>
+    <td>{{cus.customerBirthday}}</td>
+    <td>{{cus.customerGender}}?"Nam"</td>
+    <td>{{cus.customerCode}}</td>
+    <td>{{cus.customerIdCard}}</td>
+    <td>{{cus.customerPhone}}</td>
+    <td>{{cus.customerEmail}}</td>
+    <td>{{cus.customerAddress}}</td>
     <td><a href="" class="btn btn-info">Edit</a></td>
     <td><a href="" class="btn btn-success">Edit</a></td>
     <td><a href="" class="btn btn-info">View</a></td>
@@ -60,4 +50,4 @@
   <a href="">Next</a>
 </div>
 </body>
-</html>
+
