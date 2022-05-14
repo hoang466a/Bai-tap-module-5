@@ -1,52 +1,84 @@
 <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-<div>
+<div class="form-group">
     <label for="email">Email</label>
     <input type="text" id="email" name="email" formControlName="email">
-  <p style="color: red" *ngIf="((signInForm.get('email').hasError('required'))&&
-    (signInForm.get('email').touched)) ||signInForm.get('email').dirty">Email bắt buộc nhập</p>
-  <p style="color: red" *ngIf="((signInForm.get('email').hasError('email'))&&
-    (signInForm.get('email').touched)) ||signInForm.get('email').dirty">Email không đúng định dạng</p>
-</div>
-<div>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" formControlName="password">
-  <p style="color: red" *ngIf="((signInForm.get('password').hasError('required'))&&
-    (signInForm.get('password').touched)) ||signInForm.get('password').dirty">Password bắt buộc nhập</p>
-  <p style="color: red" *ngIf="((signInForm.get('password').hasError('minlength'))&&
-    (signInForm.get('password').touched)) ||signInForm.get('password').dirty">Password phải dài tối thiểu 6 kí tự</p>
+  <div *ngIf="signInForm.get('email')?.touched ||signInForm.get('email').dirty">
+    <small class="text-danger" *ngIf="signInForm.get('email')?.hasError('required')">Email không được để
+      trống.</small>
+    <small class="text-danger" *ngIf="signInForm.get('email')?.hasError('email')">Email không đúng định
+      dạng</small>
+  </div>
 </div>
 
-  <div>
+<div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" formControlName="password">
+  <div *ngIf="signInForm.get('password')?.touched ||signInForm.get('password').dirty">
+    <small class="text-danger" *ngIf="signInForm.get('password')?.hasError('required')">Password không được để
+      trống.</small>
+    <small class="text-danger" *ngIf="signInForm.get('password')?.hasError('minlength')">Password phải dài tối thiểu 6 kí
+      tự</small>
+  </div>
+</div>
+
+  <div class="form-group">
     <label for="confirmPassword">Confirm Password</label>
-    <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
-    <p style="color: red" *ngIf="((signInForm.get('confirmPassword').hasError('required'))&&
-    (signInForm.get('confirmPassword').touched)) ||signInForm.get('confirmPassword').dirty">Password bắt buộc nhập</p>
-    <p style="color: red" *ngIf="((signInForm.get('confirmPassword').hasError('minlength'))&&
-    (signInForm.get('confirmPassword').touched)) ||signInForm.get('confirmPassword').dirty">Password phải dài tối thiểu 6 kí tự</p>
-    <p style="color: red" *ngIf="((signInForm.get('confirmPassword').hasError('notmatch0'))&&
-    (signInForm.get('confirmPassword').touched)) ||signInForm.get('confirmPassword').dirty">Password không khớp</p>
-  </div>è
-  <p>
+    <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" (change)="checkConfirm()">
+    <div *ngIf="signInForm.get('confirmPassword')?.touched ||signInForm.get('confirmPassword').dirty">
+      <small class="text-danger" *ngIf="signInForm.get('confirmPassword')?.hasError('required')">Password không được để
+        trống.</small>
+      <small class="text-danger" *ngIf="signInForm.get('confirmPassword')?.hasError('minlength')">Password phải dài tối thiểu 6 kí
+        tự</small>
+      <small class="text-danger" *ngIf="signInForm.get('confirmPassword')?.hasError('notMatch')">Pass k khớp</small>
+    </div>
+  </div>
+
+  <div class="form-group">
     <label for="country">Country</label>
-    <input type="text" id="country" name="country" formControlName="country">
-  </p>
-  <p>
+    <select id="country" name="country" formControlName="country">
+      <option value="Germany">Germany</option>
+      <option value="Poland">Poland</option>
+      <option value="Viet Nam">Viet Nam</option>
+    </select>
+  <div *ngIf="signInForm.get('country')?.touched ||signInForm.get('country').dirty">
+    <small class="text-danger" *ngIf="signInForm.get('country')?.hasError('required')">Country không được để
+      trống.</small>
+  </div>
+  </div>
+
+  <div class="form-group">
     <label for="age">Age</label>
     <input type="text" id="age" name="age" formControlName="age">
-  </p>
-  <p>
-    <label for="gender">Gender</label>
-    <select id="gender" name="gender" formControlName="gender">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Other">Other</option>
-    </select>
-  </p>
-  <p>
+    <div *ngIf="signInForm.get('age')?.touched ||signInForm.get('age').dirty">
+      <small class="text-danger" *ngIf="signInForm.get('age')?.hasError('required')">Tuổi không được để
+        trống.</small>
+      <small class="text-danger" *ngIf="signInForm.get('age')?.hasError('pattern')">Định dạng tuổi không hợp
+        lệ!</small>
+      <small class="text-danger" *ngIf="signInForm.get('age')?.hasError('notUnder18')">Tuổi phải trên 18!</small>
+    </div>
+  </div>
+
+  <div>
+    <label>Gender:</label>
+    <div>
+      <input type="radio" value="male" formControlName="gender"> Male
+      <input type="radio" value="female" formControlName="gender"> Female
+      <div *ngIf="signInForm.get('gender').invalid && signInForm.get('confirmPassword')?.hasError('required')" [ngClass] = "'error'">
+        Gender required.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
     <label for="phone">Phone</label>
     <input type="text" id="phone" name="phone" formControlName="phone">
-  </p>
-  <p>
-    <button type="submit">Submit</button>
-  </p>
+    <div *ngIf="signInForm.get('phone')?.touched ||signInForm.get('phone').dirty">
+      <small class="text-danger" *ngIf="signInForm.get('phone')?.hasError('required')">SDT không được để
+        trống.</small>
+      <small class="text-danger" *ngIf="signInForm.get('phone')?.hasError('pattern')">Định dạng SDT không hợp
+        lệ!</small>
+    </div>
+  </div>
+
+
 </form>

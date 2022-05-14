@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators, AbstractControl} from "@angular/forms";
-import {SignIn} from "../sign-in";
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl, Validators, AbstractControl} from '@angular/forms';
+import {SignIn} from '../sign-in';
 
 
 @Component({
@@ -12,17 +12,19 @@ export class SignInComponent implements OnInit {
   // @ts-ignore
   // @ts-ignore
   // @ts-ignore
-  signInForm= new FormGroup({
-    email: new FormControl("",[Validators.required,Validators.email]),
-    password: new FormControl("",[Validators.required,Validators.minLength(6)]),
-    confirmPassword: new FormControl("",[Validators.required,Validators.minLength(6),this.ValidationCustompoint]),
-    country: new FormControl(),
-    age: new FormControl(),
-    gender: new FormControl(),
-    phone: new FormControl()
-  })
+  signInForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    country: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), this.ValidationCustompoint1]),
+    gender: new FormControl('', Validators.required),
+    phone: new FormControl('', [Validators.required, Validators.pattern(/^\+84\d{9,10}$/)])
+  });
   signin: SignIn;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -31,9 +33,18 @@ export class SignInComponent implements OnInit {
     console.log(this.signInForm.value);
   }
 
-ValidationCustompoint(point: AbstractControl){
-let pass=point.get('password').value;
-let confirmPass=point.get('confirmPassword').value;
-return pass === confirmPass ?null:{'notmatch0':true};
-}
+  ValidationCustompoint1(point: AbstractControl) {
+    const value = point.value;
+    if (value < 18) {
+      return {'notUnder18': true};
+    } else {
+      return null;
+    }
+  }
+
+  checkConfirm() {
+    if (this.signInForm.get('password').value !== this.signInForm.get('confirmPassword').value) {
+      this.signInForm.get('confirmPassword').setErrors({'notMatch': true});
+    }
+  }
 }
