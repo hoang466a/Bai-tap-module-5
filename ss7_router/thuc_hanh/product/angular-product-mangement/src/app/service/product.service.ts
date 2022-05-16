@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Product} from "../model/product";
 
 @Injectable({
@@ -32,12 +32,31 @@ export class ProductService {
     description: 'Like new'
   }];
 
-  getAll(){
+  getAll() {
     return this.products;
   }
 
-  saveProduct(product: Product){
+  saveProduct(product: Product) {
     this.products.push(product);
   }
-  constructor() { }
+
+  findById(id: number) {
+    return this.products.find(product => product.id === id);
+  }
+
+  updateById(id: number, product: Product) {
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].id === id) {
+        this.products[i] = product;
+      }
+    }
+  }
+
+  deleteById(id: number) {
+    this.products = this.products.filter(product => {
+      return product.id !== id;
+    });
+  }
+  constructor() {
+  }
 }
