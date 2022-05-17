@@ -23,7 +23,8 @@ import { ProductDeleteComponent } from './product/product-delete/product-delete.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

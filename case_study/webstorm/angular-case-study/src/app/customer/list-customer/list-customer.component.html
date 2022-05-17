@@ -28,7 +28,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let cus of customerList |paginate: { itemsPerPage: 3, currentPage: p ">
+  <tr *ngFor="let cus of customerList |paginate: { itemsPerPage: 3, currentPage: p }">
     <td>{{cus.customerName}}</td>
     <td>{{cus.customerBirthday}}</td>
     <td>{{cus.customerGender}}?"Nam"</td>

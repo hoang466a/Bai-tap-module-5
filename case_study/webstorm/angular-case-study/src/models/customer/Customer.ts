@@ -1,4 +1,5 @@
 import {ICustomer} from "./ICustomer";
+import {CustomerType} from "../customerType/CustomerType";
 
 export class Customer implements ICustomer{
   constructor(
@@ -11,7 +12,7 @@ export class Customer implements ICustomer{
   public customerPhone: string,
   public customerEmail: string,
   public customerAddress: string,
-  public customerType: string,
+  public customerType: CustomerType
   ) {
   }
 }

@@ -3,6 +3,7 @@ import {FormGroup, FormControl, Validators, AbstractControl} from '@angular/form
 import {SignIn} from '../sign-in';
 
 
+// @ts-ignore
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',

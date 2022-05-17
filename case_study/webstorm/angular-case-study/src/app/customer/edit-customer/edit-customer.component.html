@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Title</title>
-
 </head>
 
 <body>
@@ -16,47 +15,104 @@
   </a>
 </p>
 <div class="m-4">
-  <form action="" object="" method="POST" >
+  <form [formGroup]="editFrom" (ngSubmit)="editCustomer()" >
     <input type="hidden" field=""/>
     <div class="mb-3">
-      <label class="form-label" for="nameCustomer">Name</label>
-      <input type="text" class="form-control" id="nameCustomer" value="Nguyễn Hoài Nam" required>
+      <label class="form-label" for="customerName">Name</label>
+      <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Name" formControlName="customerName" >
+      <div *ngIf="editFrom.get('customerName').touched ||editFrom.get('customerName').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerName')?.hasError('required')">Tên không được để
+          trống.</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="Birthday">Birthday</label>
-      <input type="date" class="form-control" id="Birthday" value="2013/2/13" required>
+      <label class="form-label" for="customerCode">Code</label>
+      <input type="text" class="form-control" id="customerCode" name="customerCode" placeholder="Code" formControlName="customerCode">
+      <div *ngIf="editFrom.get('customerCode')?.touched ||editFrom.get('customerCode').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerCode')?.hasError('required')">Mã khách hàng không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="editFrom.get('customerCode')?.hasError('pattern')">Mã khách hàng không đúng địng dạng</small>
+      </div>
     </div>
-    <label class="form-label" for="maxNumber">Gender</label>
-    <select class="form-select mb-3" aria-label=".form-select-lg example" value="Year">
-      <option value="1">Female</option>
-      <option value="2">Male</option>
-    </select>
+
+
     <div class="mb-3">
-      <label class="form-label" for="code">Code</label>
-      <input type="text" class="form-control" id="code" value="KH-1235" required>
+      <label class="form-label" for="customerBirthday">BirthDay</label>
+      <input type="date" class="form-control" id="customerBirthday" name="customerBirthday"  formControlName="customerBirthday">
+      <div *ngIf="editFrom.get('customerBirthday')?.touched ||editFrom.get('customerBirthday').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerBirthday')?.hasError('required')">Ngày sinh nhật khách hàng không được để
+          trống.</small>
+      </div>
     </div>
+
+    <div>
+      <label class="form-label" >Gender</label>
+      <select class="form-select mb-3" id="customerGender" name="customerGender" aria-label=".form-select-lg example" formControlName="customerGender">
+        <option value=true>Female</option>
+        <option value=false>Male</option>
+      </select>
+      <div *ngIf="editFrom.get('customerGender')?.touched ||editFrom.get('customerGender').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerGender')?.hasError('required')">Giới tính khách hàng không được để
+          trống.</small>
+      </div>
+    </div>
+
     <div class="mb-3">
-      <label class="form-label" for="idCard">Id Card</label>
-      <input type="text" class="form-control" id="idCard" value="125478642" required>
+      <label class="form-label" for="customerIdCard">Id Card</label>
+      <input type="text" class="form-control" id="customerIdCard" name="customerIdCard" placeholder="ID card" formControlName="customerIdCard">
+      <div *ngIf="editFrom.get('customerIdCard')?.touched ||editFrom.get('customerIdCard').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerIdCard')?.hasError('required')">CMND không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="editFrom.get('customerIdCard')?.hasError('pattern')">CMND khách hàng không đúng địng dạng</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="phone">Phone</label>
-      <input type="text" class="form-control" id="phone" value="0912475641" required>
+      <label class="form-label" for="customerPhone">Phone</label>
+      <input type="text" class="form-control" id="customerPhone" name="customerPhone" placeholder="Phone" formControlName="customerPhone">
+      <div *ngIf="editFrom.get('customerPhone')?.touched ||editFrom.get('customerPhone').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerPhone')?.hasError('required')">SDT không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="editFrom.get('customerPhone')?.hasError('pattern')">SDT khách hàng không đúng địng dạng</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="Address">Email</label>
-      <input type="text" class="form-control" id="Address" value="huyhoa@gmail.com" required>
+      <label class="form-label" for="customerEmail">Email</label>
+      <input type="text" class="form-control" id="customerEmail" name="customerEmail" placeholder="Email" formControlName="customerEmail">
+      <div *ngIf="editFrom.get('customerEmail')?.touched ||editFrom.get('customerEmail').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerEmail')?.hasError('required')">Email không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="editFrom.get('customerEmail')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="Address">Address</label>
-      <input type="text" class="form-control" id="Address" value="25 Nguyễn Huy Tưởng" required>
+      <label class="form-label" for="customerAddress">Customer Address</label>
+      <input type="text" class="form-control" id="customerAddress" name="customerAddress" placeholder="Address" formControlName="customerAddress" >
+      <div *ngIf="editFrom.get('customerAddress')?.touched ||editFrom.get('customerAddress').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerAddress')?.hasError('required')">Email không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="editFrom.get('customerAddress')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+      </div>
     </div>
-    <label class="form-label" for="customerType">Customer Type</label>
-    <select class="form-select mb-3" aria-label=".form-select-lg example" value="Year">
-      <option value="1">Vip</option>
-      <option value="2">Super Pro vip</option>
-    </select>
-      <input type="submit" value="Update"/>
+
+    <div class="md-3">
+      <label class="form-label" >Customer Type</label>
+      <select class="form-select mb-3" aria-label=".form-select-lg example" formControlName="customerAddress">
+        <option *ngFor="let customerType of customerTypes"
+                [ngValue]="customerType">{{customerType.nameCustomerType}}</option>
+      </select>
+      <div *ngIf="editFrom.get('customerAddress')?.touched ||editFrom.get('customerAddress').dirty">
+        <small class="text-danger" *ngIf="editFrom.get('customerAddress')?.hasError('required')">Email không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="editFrom.get('customerAddress')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!editFrom.valid">Submit</button>
+
   </form>
 </div>
 </body>

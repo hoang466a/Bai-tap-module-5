@@ -9,12 +9,12 @@ export class Facility implements IFacility{
   public serviceArea: string,
   public serviceCost: string,
   public serviceMaxPeople: string,
-  public rentType: string,
+  public rentType: RentType,
   public standardRoom: string,
   public descriptionOtherConvenience: string,
   public poolArea: string,
   public numberOfFloor: string,
-  public serviceType: string
+  public serviceType: ServiceType
   ) {
   }
 

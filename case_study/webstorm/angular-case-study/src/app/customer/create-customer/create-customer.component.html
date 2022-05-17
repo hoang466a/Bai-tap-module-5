@@ -15,47 +15,104 @@
   </a>
 </p>
 <div class="m-4">
-  <form action="" object="" method="POST" >
+  <form [formGroup]="createFrom" (ngSubmit)="createCustomer()" >
     <input type="hidden" field=""/>
     <div class="mb-3">
-      <label class="form-label" for="nameCustomer">Name</label>
-      <input type="text" class="form-control" id="nameCustomer" placeholder="Name" required>
+      <label class="form-label" for="customerName">Name</label>
+      <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Name" formControlName="customerName" >
+      <div *ngIf="createFrom.get('customerName').touched ||createFrom.get('customerName').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerName')?.hasError('required')">Tên không được để
+          trống.</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="Birthday">Birthday</label>
-      <input type="date" class="form-control" id="Birthday" placeholder="Birthday" required>
+      <label class="form-label" for="customerCode">Code</label>
+      <input type="text" class="form-control" id="customerCode" name="customerCode" placeholder="Code" formControlName="customerCode">
+      <div *ngIf="createFrom.get('customerCode')?.touched ||createFrom.get('customerCode').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerCode')?.hasError('required')">Mã khách hàng không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="createFrom.get('customerCode')?.hasError('pattern')">Mã khách hàng không đúng địng dạng</small>
+      </div>
     </div>
-    <label class="form-label" for="maxNumber">Gender</label>
-    <select class="form-select mb-3" aria-label=".form-select-lg example">
-      <option value="1">Female</option>
-      <option value="2">Male</option>
+
+
+    <div class="mb-3">
+      <label class="form-label" for="customerBirthday">BirthDay</label>
+      <input type="date" class="form-control" id="customerBirthday" name="customerBirthday"  formControlName="customerBirthday">
+      <div *ngIf="createFrom.get('customerBirthday')?.touched ||createFrom.get('customerBirthday').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerBirthday')?.hasError('required')">Ngày sinh nhật khách hàng không được để
+          trống.</small>
+      </div>
+    </div>
+
+    <div>
+    <label class="form-label" >Gender</label>
+    <select class="form-select mb-3" id="customerGender" name="customerGender" aria-label=".form-select-lg example" formControlName="customerGender">
+      <option value=true>Female</option>
+      <option value=false>Male</option>
     </select>
-    <div class="mb-3">
-      <label class="form-label" for="code">Code</label>
-      <input type="text" class="form-control" id="code" placeholder="code" required>
+      <div *ngIf="createFrom.get('customerGender')?.touched ||createFrom.get('customerGender').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerGender')?.hasError('required')">Giới tính khách hàng không được để
+          trống.</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="idCard">Id Card</label>
-      <input type="text" class="form-control" id="idCard" placeholder="Id card" required>
+      <label class="form-label" for="customerIdCard">Id Card</label>
+      <input type="text" class="form-control" id="customerIdCard" name="customerIdCard" placeholder="ID card" formControlName="customerIdCard">
+      <div *ngIf="createFrom.get('customerIdCard')?.touched ||createFrom.get('customerIdCard').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerIdCard')?.hasError('required')">CMND không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="createFrom.get('customerIdCard')?.hasError('pattern')">CMND khách hàng không đúng địng dạng</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="phone">Phone</label>
-      <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+      <label class="form-label" for="customerPhone">Phone</label>
+      <input type="text" class="form-control" id="customerPhone" name="customerPhone" placeholder="Phone" formControlName="customerPhone">
+      <div *ngIf="createFrom.get('customerPhone')?.touched ||createFrom.get('customerPhone').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerPhone')?.hasError('required')">SDT không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="createFrom.get('customerPhone')?.hasError('pattern')">SDT khách hàng không đúng địng dạng</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="Address">Email</label>
-      <input type="text" class="form-control" id="Address" placeholder="Email" required>
+      <label class="form-label" for="customerEmail">Email</label>
+      <input type="text" class="form-control" id="customerEmail" name="customerEmail" placeholder="Email" formControlName="customerEmail">
+      <div *ngIf="createFrom.get('customerEmail')?.touched ||createFrom.get('customerEmail').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerEmail')?.hasError('required')">Email không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="createFrom.get('customerEmail')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="Address">Address</label>
-      <input type="text" class="form-control" id="Address" placeholder="Address" required>
+      <label class="form-label" for="customerAddress">Customer Address</label>
+      <input type="text" class="form-control" id="customerAddress" name="customerAddress" placeholder="Address" formControlName="customerAddress" >
+      <div *ngIf="createFrom.get('customerAddress')?.touched ||createFrom.get('customerAddress').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerAddress')?.hasError('required')">Email không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="createFrom.get('customerAddress')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+      </div>
     </div>
-    <label class="form-label" for="customerType">Customer Type</label>
-    <select class="form-select mb-3" aria-label=".form-select-lg example" placeholder="Year">
-      <option value="1">Vip</option>
-      <option value="2">Super Pro vip</option>
-      <input type="submit" value="Create"/>
+
+    <div class="md-3">
+    <label class="form-label" >Customer Type</label>
+    <select class="form-select mb-3" aria-label=".form-select-lg example" formControlName="customerAddress">
+      <option *ngFor="let customerType of customerTypes"
+              [ngValue]="customerType">{{customerType.nameCustomerType}}</option>
     </select>
+      <div *ngIf="createFrom.get('customerAddress')?.touched ||createFrom.get('customerAddress').dirty">
+        <small class="text-danger" *ngIf="createFrom.get('customerAddress')?.hasError('required')">Email không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="createFrom.get('customerAddress')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!createFrom.valid">Submit</button>
+
   </form>
 </div>
 </body>
