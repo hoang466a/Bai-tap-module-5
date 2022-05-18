@@ -1,0 +1,37 @@
+{
+  "customer": [
+    {
+      "customerId": 1,
+      "customerName": "Nguyễn Văn A",
+      "customerCode": "KH-001",
+      "customerBirthday": "12-02-1993",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      
+    },
+
+    new Customer(1, 'Nguyễn Văn A', 'KH-001', '12-02-1993', true,
+    '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[0]),
+    public customerId: number,
+    public customerName: string,
+    public customerCode: string,
+    public customerBirthday: string,
+    public customerGender: boolean,
+    public customerIdCard: string,
+    public customerPhone: string,
+    public customerEmail: string,
+    public customerAddress: string,
+    public customerType: CustomerType,
+    {
+      "name": "Khóa học 2",
+      "description": "Mô tả về khóa học 2",
+      "id": 2
+    },
+    {
+      "name": "Khóa học 3",
+      "description": "Mô tả về khóa học 3",
+      "id": 3
+    }
+  ]
+}

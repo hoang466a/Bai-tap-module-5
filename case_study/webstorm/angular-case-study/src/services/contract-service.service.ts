@@ -18,7 +18,7 @@ export class ContractServiceService {
     customerList=this.customerService.cusList();
     facilityList=this.facilityService.faciList();
     contractList=[
-      new Contract(1,'2022/01/01','2022/01/23',"500000",customerList[2],facilityList[1]),
+      new Contract(1,'2022-01-01','2022-01-23',"500000",customerList[2],facilityList[1]),
       new Contract(2, '2022-01-01','2022-01-23', '500000',customerList[0],facilityList[1]),
       new Contract(3,'2022-01-01','2022-01-23',"500000",customerList[1],facilityList[2]),
       new Contract(4,'2022-01-01','2022-01-23',"500000",customerList[0],facilityList[1]),
