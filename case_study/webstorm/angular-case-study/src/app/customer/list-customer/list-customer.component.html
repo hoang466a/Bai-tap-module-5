@@ -2,13 +2,13 @@
 <body>
 <h3>Customer List</h3>
 <p>
-  <a href="">
+  <a href="customer/create">
     Add new customer
   </a>
-<form action="">
+<!--<form>
   <input type="search" name="keyword">
   <button>Search</button>
-</form>
+</form>-->
 
 
 <table id = "object_s">
@@ -22,27 +22,29 @@
     <th>Phone</th>
     <th>Email</th>
     <th>Address</th>
+    <th>Customer Type</th>
     <th>Edit</th>
     <th>Delete</th>
-    <th>View</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let cus of customerList |paginate: { itemsPerPage: 3, currentPage: p }">
     <td>{{cus.customerName}}</td>
     <td>{{cus.customerBirthday}}</td>
-    <td>{{cus.customerGender}}?"Nam"</td>
+    <td>{{cus.customerGender ? 'Female': 'Male'}}</td>
     <td>{{cus.customerCode}}</td>
     <td>{{cus.customerIdCard}}</td>
     <td>{{cus.customerPhone}}</td>
     <td>{{cus.customerEmail}}</td>
     <td>{{cus.customerAddress}}</td>
-    <td><a href="" class="btn btn-info">Edit</a></td>
-    <td><a href="" class="btn btn-success">Edit</a></td>
-    <td><a href="" class="btn btn-info">View</a></td>
+    <td>{{cus.customerType.nameCustomerType}}</td>
+    <td><a [routerLink]="['/customer/edit',cus.id]" class="btn btn-info">Edit</a></td>
+    <td><a href="" class="btn btn-success">Delete</a></td>
   </tr>
   </tbody>
 </table>
+
+
 <div>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

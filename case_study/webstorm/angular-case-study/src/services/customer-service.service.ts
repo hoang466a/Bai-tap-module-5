@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
-import {Customer} from '../models/customer/Customer';
-import {CustomerType} from "../models/customerType/CustomerType";
-import {CustomerTypeService} from "./customer-type.service";
+import {Injectable} from '@angular/core';
+
+import {CustomerTypeService} from './customer-type.service';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {ICustomer} from '../models/customer/ICustomer';
 
 
 // @ts-ignore
@@ -9,24 +11,34 @@ import {CustomerTypeService} from "./customer-type.service";
   providedIn: 'root'
 })
 export class CustomerServiceService {
-  customerTypeService: CustomerTypeService;
-  public cusList() {
-    let customerList: Customer[];
-    let customerType: CustomerType[];
-    customerType=this.customerTypeService.customerTyList();
-    customerList = [
-      new Customer(1, 'Nguyễn Văn A', 'KH-001', '12-02-1993', true, '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[0]),
-      new Customer(2, 'Nguyễn Văn B', 'KH-002', '13-02-1994', true, '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[1]),
-      new Customer(3, 'Nguyễn Văn C', 'KH-002', '13-02-1995', true, '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[2]),
-      new Customer(4, 'Nguyễn Văn D', 'KH-002', '13-02-1991', true, '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[1]),
-      new Customer(5, 'Nguyễn Văn E', 'KH-002', '13-02-1998', true, '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[2]),
-      new Customer(6, 'Nguyễn Văn F', 'KH-002', '13-02-1992', true, '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[3]),
-      new Customer(7, 'Nguyễn Văn G', 'KH-002', '13-02-1994', true, '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[1]),
-      new Customer(8, 'Nguyễn Văn H', 'KH-002', '13-02-1991', true, '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[0])];
-    return customerList;
+  URL_LIST = 'http://localhost:3000/customer';
+
+  constructor(private http: HttpClient) {
+  }
+
+  // @ts-ignore
+  getAllCustomer(): Observable<Customer[]> {
+    return this.http.get<ICustomer[]>(this.URL_LIST);
+  }
+
+
+  saveCustomer(customer:ICustomer): Observable<ICustomer> {
+    return this.http.post<ICustomer>(this.URL_LIST, customer);
+  }
+
+  findById(id: number): Observable<ICustomer> {
+    // @ts-ignore
+    return this.http.get<Customer>(this.URL_LIST+'/'+id);
+  }
+
+  updateCustomer(id: number, customer: ICustomer): Observable<ICustomer> {
+  return this.http.put<ICustomer>(`this.URL_LIST/${id}`,customer);
+  }
+
+  deleteCustomer(id:number): Observable<ICustomer>{
+      return this.http.delete<ICustomer>('this.URL_LIST/${id}');
   }
 
 
 
-  constructor() { }
 }

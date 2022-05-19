@@ -24,7 +24,6 @@ import { ProductDeleteComponent } from './product/product-delete/product-delete.
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

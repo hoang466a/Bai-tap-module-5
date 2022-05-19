@@ -10,18 +10,20 @@
 <body>
 <h2>Create Customer</h2>
 <p>
-  <a href="">
+  <a href="customer/list">
     Back to customer list
   </a>
 </p>
-<div class="m-4">
-  <form [formGroup]="createFrom" (ngSubmit)="createCustomer()" >
+<div  style="display: flex; justify-content: center">
+<div style="width: 500px; display: flex; justify-content: center">
+  <form [formGroup]="createForm" (ngSubmit)="createCustomer()" style="width: 100%;" >
     <input type="hidden" field=""/>
     <div class="mb-3">
+
       <label class="form-label" for="customerName">Name</label>
-      <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Name" formControlName="customerName" >
-      <div *ngIf="createFrom.get('customerName').touched ||createFrom.get('customerName').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerName')?.hasError('required')">Tên không được để
+      <input type="text"   class="form-control " id="customerName" name="customerName" placeholder="Name" formControlName="customerName" >
+      <div *ngIf="createForm.get('customerName').touched ||createForm.get('customerName').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerName')?.hasError('required')">Tên không được để
           trống.</small>
       </div>
     </div>
@@ -29,10 +31,10 @@
     <div class="mb-3">
       <label class="form-label" for="customerCode">Code</label>
       <input type="text" class="form-control" id="customerCode" name="customerCode" placeholder="Code" formControlName="customerCode">
-      <div *ngIf="createFrom.get('customerCode')?.touched ||createFrom.get('customerCode').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerCode')?.hasError('required')">Mã khách hàng không được để
+      <div *ngIf="createForm.get('customerCode')?.touched ||createForm.get('customerCode').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerCode')?.hasError('required')">Mã khách hàng không được để
           trống.</small>
-        <small class="text-danger" *ngIf="createFrom.get('customerCode')?.hasError('pattern')">Mã khách hàng không đúng địng dạng</small>
+        <small class="text-danger" *ngIf="createForm.get('customerCode')?.hasError('pattern')">Mã khách hàng không đúng địng dạng</small>
       </div>
     </div>
 
@@ -40,20 +42,20 @@
     <div class="mb-3">
       <label class="form-label" for="customerBirthday">BirthDay</label>
       <input type="date" class="form-control" id="customerBirthday" name="customerBirthday"  formControlName="customerBirthday">
-      <div *ngIf="createFrom.get('customerBirthday')?.touched ||createFrom.get('customerBirthday').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerBirthday')?.hasError('required')">Ngày sinh nhật khách hàng không được để
+      <div *ngIf="createForm.get('customerBirthday')?.touched ||createForm.get('customerBirthday').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerBirthday')?.hasError('required')">Ngày sinh nhật khách hàng không được để
           trống.</small>
       </div>
     </div>
 
     <div>
     <label class="form-label" >Gender</label>
-    <select class="form-select mb-3" id="customerGender" name="customerGender" aria-label=".form-select-lg example" formControlName="customerGender">
-      <option value=true>Female</option>
-      <option value=false>Male</option>
+    <select class="form-select mb-3" id="customerGender" name="customerGender" aria-label="form-select-lg example" formControlName="customerGender">
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
     </select>
-      <div *ngIf="createFrom.get('customerGender')?.touched ||createFrom.get('customerGender').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerGender')?.hasError('required')">Giới tính khách hàng không được để
+      <div *ngIf="createForm.get('customerGender')?.touched ||createForm.get('customerGender').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerGender')?.hasError('required')">Giới tính khách hàng không được để
           trống.</small>
       </div>
     </div>
@@ -61,59 +63,61 @@
     <div class="mb-3">
       <label class="form-label" for="customerIdCard">Id Card</label>
       <input type="text" class="form-control" id="customerIdCard" name="customerIdCard" placeholder="ID card" formControlName="customerIdCard">
-      <div *ngIf="createFrom.get('customerIdCard')?.touched ||createFrom.get('customerIdCard').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerIdCard')?.hasError('required')">CMND không được để
+      <div *ngIf="createForm.get('customerIdCard')?.touched ||createForm.get('customerIdCard').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerIdCard')?.hasError('required')">CMND không được để
           trống.</small>
-        <small class="text-danger" *ngIf="createFrom.get('customerIdCard')?.hasError('pattern')">CMND khách hàng không đúng địng dạng</small>
+        <small class="text-danger" *ngIf="createForm.get('customerIdCard')?.hasError('pattern')">CMND khách hàng không đúng địng dạng</small>
       </div>
     </div>
 
     <div class="mb-3">
       <label class="form-label" for="customerPhone">Phone</label>
       <input type="text" class="form-control" id="customerPhone" name="customerPhone" placeholder="Phone" formControlName="customerPhone">
-      <div *ngIf="createFrom.get('customerPhone')?.touched ||createFrom.get('customerPhone').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerPhone')?.hasError('required')">SDT không được để
+      <div *ngIf="createForm.get('customerPhone')?.touched ||createForm.get('customerPhone').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerPhone')?.hasError('required')">SDT không được để
           trống.</small>
-        <small class="text-danger" *ngIf="createFrom.get('customerPhone')?.hasError('pattern')">SDT khách hàng không đúng địng dạng</small>
+        <small class="text-danger" *ngIf="createForm.get('customerPhone')?.hasError('pattern')">SDT khách hàng không đúng địng dạng</small>
       </div>
     </div>
 
     <div class="mb-3">
       <label class="form-label" for="customerEmail">Email</label>
       <input type="text" class="form-control" id="customerEmail" name="customerEmail" placeholder="Email" formControlName="customerEmail">
-      <div *ngIf="createFrom.get('customerEmail')?.touched ||createFrom.get('customerEmail').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerEmail')?.hasError('required')">Email không được để
+      <div *ngIf="createForm.get('customerEmail')?.touched ||createForm.get('customerEmail').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerEmail')?.hasError('required')">Email không được để
           trống.</small>
-        <small class="text-danger" *ngIf="createFrom.get('customerEmail')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+        <small class="text-danger" *ngIf="createForm.get('customerEmail')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
       </div>
     </div>
 
     <div class="mb-3">
       <label class="form-label" for="customerAddress">Customer Address</label>
       <input type="text" class="form-control" id="customerAddress" name="customerAddress" placeholder="Address" formControlName="customerAddress" >
-      <div *ngIf="createFrom.get('customerAddress')?.touched ||createFrom.get('customerAddress').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerAddress')?.hasError('required')">Email không được để
+      <div *ngIf="createForm.get('customerAddress')?.touched ||createForm.get('customerAddress').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerAddress')?.hasError('required')">Email không được để
           trống.</small>
-        <small class="text-danger" *ngIf="createFrom.get('customerAddress')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+        <small class="text-danger" *ngIf="createForm.get('customerAddress')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
       </div>
     </div>
 
     <div class="md-3">
     <label class="form-label" >Customer Type</label>
-    <select class="form-select mb-3" aria-label=".form-select-lg example" formControlName="customerAddress">
+    <select class="form-select mb-3" aria-label=".form-select-lg example" formControlName="customerType">
       <option *ngFor="let customerType of customerTypes"
               [ngValue]="customerType">{{customerType.nameCustomerType}}</option>
     </select>
-      <div *ngIf="createFrom.get('customerAddress')?.touched ||createFrom.get('customerAddress').dirty">
-        <small class="text-danger" *ngIf="createFrom.get('customerAddress')?.hasError('required')">Email không được để
+      <div *ngIf="createForm.get('customerType')?.touched ||createForm.get('customerType').dirty">
+        <small class="text-danger" *ngIf="createForm.get('customerType')?.hasError('required')">Email không được để
           trống.</small>
-        <small class="text-danger" *ngIf="createFrom.get('customerAddress')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
+        <small class="text-danger" *ngIf="createForm.get('customerType')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
       </div>
     </div>
 
-    <button type="submit" [disabled]="!createFrom.valid">Submit</button>
+    <button type="submit" >Submit</button>
+
 
   </form>
+</div>
 </div>
 </body>
 </html>

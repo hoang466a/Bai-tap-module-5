@@ -1,14 +1,15 @@
-import {CustomerType} from "../customerType/CustomerType";
+
+import {ICustomerType} from "../customerType/ICustomerType";
 
 export interface ICustomer {
-  customerId: number;
+  id: number;
   customerName: string;
   customerCode: string;
-  customerBirthday: string;
+  customerBirthday: Date;
   customerGender: boolean;
   customerIdCard: string;
   customerPhone: string;
   customerEmail: string;
   customerAddress: string;
-  customerType: CustomerType;
+  customerType: ICustomerType;
 }

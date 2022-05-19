@@ -20,6 +20,8 @@ import { EditServiceHouseComponent } from './service-furama/edit-service-house/e
 import { EditServiceVillaComponent } from './service-furama/edit-service-villa/edit-service-villa.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import {ReactiveFormsModule} from "@angular/forms";
         BrowserModule,
         AppRoutingModule,
         NgxPaginationModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

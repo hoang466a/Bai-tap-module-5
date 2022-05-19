@@ -1,9 +1,10 @@
-import {Customer} from "../customer/Customer";
+
 import {Facility} from "../service_furama/Facility";
+import {ICustomer} from '../customer/ICustomer';
 
 export interface IContract {
   contractId: number;
-  customer: Customer;
+  customer: ICustomer;
   facility: Facility;
   contractStartDate: String;
   contractEndDate: String;

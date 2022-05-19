@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
-import {CustomerType} from "../models/customerType/CustomerType";
+
+import {Observable} from 'rxjs';
+
+import {HttpClient} from '@angular/common/http';
+import {ICustomerType} from '../models/customerType/ICustomerType';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerTypeService {
-  public customerTyList(){
-    let customerTypeList: CustomerType[];
-    customerTypeList=[
-      new CustomerType(1,'Diamond'),
-      new CustomerType(2,'Platinum'),
-      new CustomerType(3,'Gold'),
-      new CustomerType(4,'Silver'),
-      new CustomerType(5,'Member'),
-    ]
-    return customerTypeList;
-  }}
+  URL_TYPE = 'http://localhost:3000/customerType';
+
+  getAllCustomerType(): Observable<ICustomerType[]> {
+    return this.http.get<ICustomerType[]>(this.URL_TYPE);
+  }
+
+  constructor(private http:HttpClient) {
+  }
+
+}
 

@@ -1,37 +1,296 @@
 {
   "customer": [
     {
-      "customerId": 1,
-      "customerName": "Nguyễn Văn A",
-      "customerCode": "KH-001",
-      "customerBirthday": "12-02-1993",
+      "id": 2,
+      "customerName": "Nguyễn Văn B",
+      "customerCode": "KH-002",
+      "customerBirthday": "2022-05-16",
       "customerGender": true,
       "customerIdCard": "123456789",
       "customerPhone": "0912457842",
-      
-    },
-
-    new Customer(1, 'Nguyễn Văn A', 'KH-001', '12-02-1993', true,
-    '123456789', '0912457842', 'hoangtn92@gmail.com', '49 Hà Huy Tập', customerType[0]),
-    public customerId: number,
-    public customerName: string,
-    public customerCode: string,
-    public customerBirthday: string,
-    public customerGender: boolean,
-    public customerIdCard: string,
-    public customerPhone: string,
-    public customerEmail: string,
-    public customerAddress: string,
-    public customerType: CustomerType,
-    {
-      "name": "Khóa học 2",
-      "description": "Mô tả về khóa học 2",
-      "id": 2
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
     },
     {
-      "name": "Khóa học 3",
-      "description": "Mô tả về khóa học 3",
-      "id": 3
+      "id": 3,
+      "customerName": "Nguyễn Văn C",
+      "customerCode": "KH-003",
+      "customerBirthday": "2022-05-26",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
+    },
+    {
+      "id": 4,
+      "customerName": "Nguyễn Văn D",
+      "customerCode": "KH-004",
+      "customerBirthday": "2022-05-09",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
+    },
+    {
+      "id": 5,
+      "customerName": "Nguyễn Văn E",
+      "customerCode": "KH-005",
+      "customerBirthday": "2022-02-06",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
+    },
+    {
+      "id": 6,
+      "customerName": "Nguyễn Văn F",
+      "customerCode": "KH-006",
+      "customerBirthday": "2022-04-06",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
+    },
+    {
+      "id": 7,
+      "customerName": "Nguyễn Văn G",
+      "customerCode": "KH-007",
+      "customerBirthday": "2022-08-06",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
+    },
+    {
+      "id": 8,
+      "customerName": "Nguyễn Văn H",
+      "customerCode": "KH-008",
+      "customerBirthday": "2022-05-06",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
+    },
+    {
+      "id": 9,
+      "customerName": "Nguyễn Văn I",
+      "customerCode": "KH-009",
+      "customerBirthday": "2022-05-06",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
+    },
+    {
+      "id": 10,
+      "customerName": "Nguyễn Văn K",
+      "customerCode": "KH-010",
+      "customerBirthday": "2022-05-06",
+      "customerGender": true,
+      "customerIdCard": "123456789",
+      "customerPhone": "0912457842",
+      "customerEmail": "hoangtn92@gmail.com",
+      "customerAddress": "49 Hà Huy Tập",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      }
+    },
+    {
+      "id": 11,
+      "customerName": "Minh Hoa Hoang",
+      "customerCode": "KH-1234",
+      "customerBirthday": "2022-05-06",
+      "customerGender": "",
+      "customerIdCard": "999999999",
+      "customerPhone": "0901234567",
+      "customerEmail": "hoangtn96@gmail.com",
+      "customerAddress": "255 Nguyễn Thái Học",
+      "customerType": {
+        "id": 4,
+        "nameCustomerType": "Silver"
+      }
+    },
+    {
+      "id": 12,
+      "customerName": "Minh Hoa Hoang",
+      "customerCode": "KH-0001",
+      "customerBirthday": "2022-05-06",
+      "customerGender": "false",
+      "customerIdCard": "999999999",
+      "customerPhone": "0901234567",
+      "customerEmail": "hoangtn96@gmail.com",
+      "customerAddress": "255 Nguyễn Thái Học",
+      "customerType": {
+        "id": 3,
+        "nameCustomerType": "Gold"
+      }
+    },
+    {
+      "id": 13,
+      "customerName": "Minh Hoa Hoang",
+      "customerCode": "KH-0001",
+      "customerBirthday": "2022-05-10",
+      "customerGender": "Female",
+      "customerIdCard": "999999999",
+      "customerPhone": "0912458742",
+      "customerEmail": "hoangtn96@gmail.com",
+      "customerAddress": "255 Nguyễn Thái Học",
+      "customerType": {
+        "id": 3,
+        "nameCustomerType": "Gold"
+      }
+    },
+    {
+      "id": 14,
+      "customerName": "Minh Hoa Hoang",
+      "customerCode": "KH-0001",
+      "customerBirthday": "2022-05-17",
+      "customerGender": false,
+      "customerIdCard": "999999999",
+      "customerPhone": "0912456789",
+      "customerEmail": "hoangtn96@gmail.com",
+      "customerAddress": "255 Nguyễn Thái Học",
+      "customerType": {
+        "id": 2,
+        "nameCustomerType": "Platinum"
+      }
+    },
+    {
+      "id": 15,
+      "customerName": "Toan huy",
+      "customerCode": "KH-0001",
+      "customerBirthday": "2022-05-11",
+      "customerGender": false,
+      "customerIdCard": "999999999",
+      "customerPhone": "0912456789",
+      "customerEmail": "hoangtn96@gmail.com",
+      "customerAddress": "Ho Chi Minh",
+      "customerType": {
+        "id": 3,
+        "nameCustomerType": "Gold"
+      }
+    },
+    {
+      "id": 16,
+      "customerName": "Toan Huy 1",
+      "customerCode": "",
+      "customerBirthday": "2022-05-05",
+      "customerGender": false,
+      "customerIdCard": "999999999",
+      "customerPhone": "0123784596",
+      "customerEmail": "toan76@gmail.com",
+      "customerAddress": "Ho Chi Minh",
+      "customerType": {
+        "id": 3,
+        "nameCustomerType": "Gold"
+      }
+    },
+    {
+      "id": 17,
+      "customerName": "Toan Huy 2",
+      "customerCode": "KH-0012",
+      "customerBirthday": "2022-05-24",
+      "customerGender": true,
+      "customerIdCard": "999999999",
+      "customerPhone": "0912458763",
+      "customerEmail": "hoangtn96@gmail.com",
+      "customerAddress": "ASDA",
+      "customerType": {
+        "id": 4,
+        "nameCustomerType": "Silver"
+      }
+    },
+    {
+      "id": 18,
+      "customerName": "Minh Hoa Hoang",
+      "customerCode": "KH-1234",
+      "customerBirthday": "2022-05-10",
+      "customerGender": true,
+      "customerIdCard": "999999999",
+      "customerPhone": "0912458453",
+      "customerEmail": "hoangtn96@gmail.com",
+      "customerAddress": "255 Nguyễn Thái Học",
+      "customerType": {
+        "id": 3,
+        "nameCustomerType": "Gold"
+      }
+    },
+    {
+      "id": 19,
+      "customerName": "Minh Hoa Hoang 001",
+      "customerCode": "KH-0002",
+      "customerBirthday": "2022-05-24",
+      "customerGender": true,
+      "customerIdCard": "999999999",
+      "customerPhone": "0912456782",
+      "customerEmail": "hoangtn96@gmail.com",
+      "customerAddress": "255 Nguyễn Thái Học",
+      "customerType": {
+        "id": 4,
+        "nameCustomerType": "Silver"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "nameCustomerType": "Diamond"
+    },
+    {
+      "id": 2,
+      "nameCustomerType": "Platinum"
+    },
+    {
+      "id": 3,
+      "nameCustomerType": "Gold"
+    },
+    {
+      "id": 4,
+      "nameCustomerType": "Silver"
+    },
+    {
+      "id": 5,
+      "nameCustomerType": "Member"
     }
   ]
 }

@@ -1,6 +1,6 @@
 import {IContract} from './IContract';
-import {Customer} from "../customer/Customer";
 import {Facility} from "../service_furama/Facility";
+import {ICustomer} from '../customer/ICustomer';
 
 export class Contract implements IContract{
   constructor(
@@ -8,7 +8,7 @@ export class Contract implements IContract{
     public contractStartDate: String,
     public contractEndDate: String,
     public contractDeposit: string,
-    public customer: Customer,
+    public customer: ICustomer,
     public facility: Facility
   ) {
 

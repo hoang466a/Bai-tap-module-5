@@ -12,8 +12,7 @@ export class ListContractComponent implements OnInit {
   p: number = 1;
 
 
-  constructor(private contractServiceService:ContractServiceService) {this.contractList= contractServiceService.contr() }
-  collection: any[] = this.contractList;
+
   ngOnInit(): void {
   }
 
