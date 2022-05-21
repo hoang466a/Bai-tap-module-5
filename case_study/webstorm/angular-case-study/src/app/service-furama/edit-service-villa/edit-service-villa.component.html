@@ -10,48 +10,113 @@
 
 <body>
 <a class="btn btn-primary" href="#" role="button">Link</a>
-<h2>Edit Villa</h2>
+<h2>Create Villa</h2>
 <div class="m-4">
-  <form action="" method="post">
+  <form [formGroup]="createForm" (ngSubmit)="createVilla()">
     <div class="mb-3">
       <label class="form-label" for="nameService">Name Service</label>
-      <input type="text" class="form-control" id="nameService" value="Villa 1" required>
+      <input type="text" class="form-control" id="nameService" formControlName="nameService" placeholder="Name Service">
+      <div *ngIf="createForm.get('nameService').touched ||createForm.get('nameService').dirty">
+        <small class="text-danger" *ngIf="createForm.get('nameService')?.hasError('required')">Tên không được để
+          trống!</small>
+        <small class="text-danger" *ngIf="createForm.get('nameService')?.hasError('pattern')">Tên không được có số!</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="inputArea">Area Use</label>
-      <input type="text" class="form-control" id="inputArea" value="100 m2" required>
+      <label class="form-label" for="serviceArea">Area Use</label>
+      <input type="text" class="form-control" formControlName="serviceArea" id="serviceArea" placeholder="Area Use" required>
+      <div *ngIf="createForm.get('serviceArea').touched ||createForm.get('nameService').dirty">
+        <small class="text-danger" *ngIf="createForm.get('serviceArea')?.hasError('required')">Diện tích không được để
+          trống!</small>
+        <small class="text-danger" *ngIf="createForm.get('serviceArea')?.hasError('pattern')">Diện tích không đúng định dạng!</small>
+        <small class="text-danger" *ngIf="createForm.get('serviceArea')?.hasError('notunder0')">Diện tích không được nhỏ hơn 0!</small>
+      </div>
     </div>
+
+
     <div class="mb-3">
       <label class="form-label" for="costForRent">Cost For Rent</label>
-      <input type="text" class="form-control" id="costForRent" value="450000 VND" required>
+      <input type="text" class="form-control" formControlName="serviceCost" id="costForRent" placeholder="Cost For Rent" required>
+      <div *ngIf="createForm.get('serviceCost').touched ||createForm.get('serviceCost').dirty">
+        <small class="text-danger" *ngIf="createForm.get('serviceCost')?.hasError('required')">Không được để
+          trống!</small>
+      </div>
     </div>
+
+
     <div class="mb-3">
       <label class="form-label" for="maxNumber">Max People</label>
-      <input type="text" class="form-control" id="maxNumber" value="5" required>
+      <input type="text" class="form-control" formControlName="serviceMaxPeople" id="maxNumber" placeholder="Max People" required>
+      <div *ngIf="createForm.get('serviceMaxPeople').touched ||createForm.get('serviceMaxPeople').dirty">
+        <small class="text-danger" *ngIf="createForm.get('serviceMaxPeople')?.hasError('required')">Không được để
+          trống!</small>
+      </div>
     </div>
-    <label class="form-label" for="maxNumber">Type of hire</label>
-    <select class="form-select mb-3" aria-label=".form-select-lg example" value="Year">
-      <option value="1">Year</option>
-      <option value="2">Month</option>
-      <option value="3">Day</option>
-    </select>
+
+    <div class="mb-3">
+      <label class="form-label" >Type of hire</label>
+      <select class="form-select mb-3" formControlName="rentType" aria-label=".form-select-lg example">
+        <option *ngFor="let renType of rentTypeServiceList" [ngValue]="renType">{{renType}}</option>
+      </select>
+      <div *ngIf="createForm.get('rentType').touched ||createForm.get('rentType').dirty">
+        <small class="text-danger" *ngIf="createForm.get('rentType')?.hasError('required')">Không được để
+          trống!</small>
+      </div>
+    </div>
+
     <div class="mb-3">
       <label class="form-label" for="standardRoom">Standard Room</label>
-      <input type="text" class="form-control" id="standardRoom" value="VIP PRO" required>
+      <input type="text" class="form-control" formControlName="standardRoom" id="standardRoom" placeholder="Standard Room" required>
+      <div *ngIf="createForm.get('standardRoom').touched ||createForm.get('standardRoom').dirty">
+        <small class="text-danger" *ngIf="createForm.get('standardRoom')?.hasError('required')">Không được để
+          trống!</small>
+      </div>
     </div>
+
+
     <div class="mb-3">
       <label class="form-label" for="descriptionOfService">Description of service</label>
-      <input type="text" class="form-control" id="descriptionOfService" value="Have a bicycle" required>
+      <input type="text" class="form-control" formControlName="descriptionOfService" id="descriptionOfService" placeholder="Description of service" required>
+      <div *ngIf="createForm.get('descriptionOfService').touched ||createForm.get('descriptionOfService').dirty">
+        <small class="text-danger" *ngIf="createForm.get('descriptionOfService')?.hasError('required')">Không được để
+          trống!</small>
+      </div>
     </div>
+
     <div class="mb-3">
-      <label class="form-label" for="areaPool">Area Pool</label>
-      <input type="text" class="form-control" id="areaPool" value="100 m2" required>
+      <label class="form-label" for="poolArea">Area Pool</label>
+      <input type="text" class="form-control" formControlName="poolArea" id="poolArea" placeholder="Area Pool" required>
+      <div *ngIf="createForm.get('poolArea').touched ||createForm.get('poolArea').dirty">
+        <small class="text-danger" *ngIf="createForm.get('poolArea')?.hasError('required')">Diện tích không được để
+          trống!</small>
+        <small class="text-danger" *ngIf="createForm.get('poolArea')?.hasError('pattern')">Diện tích không đúng định dạng!</small>
+        <small class="text-danger" *ngIf="createForm.get('poolArea')?.hasError('notunder0')">Diện tích không được nhỏ hơn 0!</small>
+      </div>
     </div>
+
     <div class="mb-3">
       <label class="form-label" for="numberOfFloor">Number Of Floor</label>
-      <input type="text" class="form-control" id="numberOfFloor" value="7" required>
+      <input type="text" class="form-control" formControlName="" id="numberOfFloor" placeholder="Number Of Floor" required>
+      <div *ngIf="createForm.get('numberOfFloor').touched ||createForm.get('numberOfFloor').dirty">
+        <small class="text-danger" *ngIf="createForm.get('numberOfFloor')?.hasError('required')">không được để
+          trống!</small>
+        <small class="text-danger" *ngIf="createForm.get('numberOfFloor')?.hasError('pattern')">Số tầng không đúng định dạng!</small>
+        <small class="text-danger" *ngIf="createForm.get('numberOfFloor')?.hasError('notunder0')">Số tầng không được nhỏ hơn 0!</small>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Update</button>
+
+    <div class="mb-3">
+      <label class="form-label" >Service Type</label>
+      <select class="form-select mb-3" formControlName="serviceType" aria-label=".form-select-lg example">
+        <option *ngFor="let serType of serviceTypeList" [ngValue]="serType">{{serType}}</option>
+      </select>
+      <div *ngIf="createForm.get('serviceType').touched ||createForm.get('serviceType').dirty">
+        <small class="text-danger" *ngIf="createForm.get('rentType')?.hasError('required')">Không được để
+          trống!</small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
   </form>
 </div>
 

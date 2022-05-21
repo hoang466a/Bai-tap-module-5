@@ -19,7 +19,7 @@ import { CreateServiceVillaComponent } from './service-furama/create-service-vil
 import { EditServiceHouseComponent } from './service-furama/edit-service-house/edit-service-house.component';
 import { EditServiceVillaComponent } from './service-furama/edit-service-villa/edit-service-villa.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 
 
@@ -42,13 +42,14 @@ import {HttpClientModule} from "@angular/common/http";
     EditServiceHouseComponent,
     EditServiceVillaComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgxPaginationModule,
-        ReactiveFormsModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

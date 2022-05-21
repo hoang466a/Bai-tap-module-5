@@ -1,0 +1,59 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "nameCategory": "Nhà Đất"
+    },
+    {
+      "id": 2,
+      "nameCategory": "Cho Thuê"
+    },
+    {
+      "id": 3,
+      "nameCategory": "Nhà xưởng"
+    }
+  ],
+
+  "landTitle": [
+    {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "nameCategory": "Nhà Đất"
+      },
+      "local": "Hà Nội",
+      "level": "Cá nhân",
+      "titleType": "Cần bán",
+      "status": "Mới",
+      "address": "54 Hùng Vương",
+      "area": "100",
+      "direction": "đông",
+      "title": "bán nhà Hà Nội",
+      "content": "cần bán gấp nhà ở Hà Nội, diện tích 100 m2, giá có thể thỏa thuận",
+      "price": "1000000000",
+      "priceCheck": true,
+      "imageUrl": "https://nhadepsang.com.vn/images/2017/08/20-hinh-anh-noi-bat-cho-mau-nha-dep-1-tang-o-nong-thon-3.jpg",
+      "datePost": "2022-05-18"
+    },
+    {
+      "id": 2,
+      "category": {
+        "id": 1,
+        "nameCategory": "Nhà Đất"
+      },
+      "local": "Hồ Chí Minh",
+      "level": "Cá nhân",
+      "titleType": "Cần bán",
+      "status": "Mới",
+      "address": "54 Quận 1",
+      "area": "200",
+      "direction": "đông",
+      "title": "bán nhà Hồ Chí Minh",
+      "content": "cần bán gấp nhà ở Hà Nội, diện tích 100 m2, giá có thể thỏa thuận",
+      "price": "1000000000",
+      "priceCheck": true,
+      "imageUrl": "https://nhadepsang.com.vn/images/2017/08/20-hinh-anh-noi-bat-cho-mau-nha-dep-1-tang-o-nong-thon-3.jpg",
+      "datePost": "2022-05-18"
+    }
+  ]
+}

@@ -49,8 +49,8 @@
       <div>
         <label class="form-label" >Gender</label>
         <select class="form-select mb-3" id="customerGender" name="customerGender" aria-label="form-select-lg example" formControlName="customerGender">
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
+          <option *ngFor="let gen of genderList"
+                  [ngValue]="gen">{{gen}}</option>
         </select>
         <div *ngIf="editFrom.get('customerGender')?.touched ||editFrom.get('customerGender').dirty">
           <small class="text-danger" *ngIf="editFrom.get('customerGender')?.hasError('required')">Giới tính khách hàng không được để
@@ -92,9 +92,8 @@
         <label class="form-label" for="customerAddress">Customer Address</label>
         <input type="text" class="form-control" id="customerAddress" name="customerAddress" placeholder="Address" formControlName="customerAddress" >
         <div *ngIf="editFrom.get('customerAddress')?.touched ||editFrom.get('customerAddress').dirty">
-          <small class="text-danger" *ngIf="editFrom.get('customerAddress')?.hasError('required')">Email không được để
+          <small class="text-danger" *ngIf="editFrom.get('customerAddress')?.hasError('required')">Địa chỉ không được để
             trống.</small>
-          <small class="text-danger" *ngIf="editFrom.get('customerAddress')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
         </div>
       </div>
 
@@ -105,9 +104,8 @@
                   [ngValue]="cs">{{cs.nameCustomerType}}</option>
         </select>
         <div *ngIf="editFrom.get('customerType')?.touched ||editFrom.get('customerType').dirty">
-          <small class="text-danger" *ngIf="editFrom.get('customerType')?.hasError('required')">Email không được để
+          <small class="text-danger" *ngIf="editFrom.get('customerType')?.hasError('required')">Loại khách hàng không được để
             trống.</small>
-          <small class="text-danger" *ngIf="editFrom.get('customerType')?.hasError('email')">Email khách hàng không đúng địng dạng</small>
         </div>
       </div>
 

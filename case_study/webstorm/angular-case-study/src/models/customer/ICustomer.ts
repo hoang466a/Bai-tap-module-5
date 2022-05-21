@@ -6,7 +6,7 @@ export interface ICustomer {
   customerName: string;
   customerCode: string;
   customerBirthday: Date;
-  customerGender: boolean;
+  customerGender: string;
   customerIdCard: string;
   customerPhone: string;
   customerEmail: string;

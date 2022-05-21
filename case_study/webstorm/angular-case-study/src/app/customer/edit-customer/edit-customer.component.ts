@@ -3,7 +3,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerTypeService} from '../../../services/customer-type.service';
 import {CustomerServiceService} from '../../../services/customer-service.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
-import {Observable} from 'rxjs';
 import {ICustomerType} from '../../../models/customerType/ICustomerType';
 import {ICustomer} from '../../../models/customer/ICustomer';
 
@@ -16,6 +15,7 @@ export class EditCustomerComponent implements OnInit {
   customer: ICustomer;
   customerTypes: ICustomerType[];
   editFrom: FormGroup;
+  genderList: string[];
   id: number;
 
   // editFrom = new FormGroup({
@@ -34,7 +34,9 @@ export class EditCustomerComponent implements OnInit {
 
   constructor(private customerTypeService: CustomerTypeService,
               private customerServiceService: CustomerServiceService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
+
 
     this.editFrom = new FormGroup({
       id: new FormControl(''),
@@ -59,10 +61,10 @@ export class EditCustomerComponent implements OnInit {
 
     this.customerTypeService.getAllCustomerType().subscribe(data => {
       this.customerTypes = data;
+      this.genderList=this.customerServiceService.genderList;
       console.log(this.customerTypes);
         this.customerServiceService.findById(this.id).subscribe(data1 => {
           this.customer = data1;
-          console.log('haha');
           console.log(this.customer);
           this.editFrom.patchValue(this.customer);
           console.log(this.editFrom.value);
@@ -83,21 +85,18 @@ export class EditCustomerComponent implements OnInit {
 
 
   updateCustomer(id: number) {
-    if (this.editFrom.get('customerGender').value == 'Female') {
-      this.editFrom.get('customerGender').setValue(true);
-    } else {
-      this.editFrom.get('customerGender').setValue(false);
-    }
 
     const customer = this.editFrom.value;
     if (this.editFrom.invalid) {
+      console.log(this.editFrom);
       alert('form có lỗi!');
     } else {
       this.customerServiceService.updateCustomer(id, customer).subscribe(() => {
+        this.router.navigate(['/customer/list']);
         alert('Cập nhật thành công');
       }, e => {
         console.log(e);
       });
-    }
-  }
+    }}
+
 }

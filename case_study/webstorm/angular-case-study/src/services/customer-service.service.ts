@@ -13,7 +13,13 @@ import {ICustomer} from '../models/customer/ICustomer';
 export class CustomerServiceService {
   URL_LIST = 'http://localhost:3000/customer';
 
+  genderList=["Male", "Female","Gay","Lesbian","Other"];
+
   constructor(private http: HttpClient) {
+  }
+
+  getAllGender(){
+    return this.genderList;
   }
 
   // @ts-ignore
@@ -32,13 +38,14 @@ export class CustomerServiceService {
   }
 
   updateCustomer(id: number, customer: ICustomer): Observable<ICustomer> {
-  return this.http.put<ICustomer>(`this.URL_LIST/${id}`,customer);
+  return this.http.put<ICustomer>(this.URL_LIST+'/'+id,customer);
   }
 
   deleteCustomer(id:number): Observable<ICustomer>{
-      return this.http.delete<ICustomer>('this.URL_LIST/${id}');
+      return this.http.delete<ICustomer>(this.URL_LIST+'/'+id);
   }
 
-
-
+  find(customerName: string){
+    return this.http.get<any>(this.URL_LIST+'?customerName_like='+customerName);
+  }
 }

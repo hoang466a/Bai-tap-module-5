@@ -16,17 +16,26 @@
   </a>
 </p>
 <div class="m-4">
-  <form action="" object="" method="POST" >
-    <input type="hidden" field=""/>
+  <form [formGroup]="createForm" >
     <div class="mb-3">
       <label class="form-label" for="contractStartDate">Contract Start Date</label>
-      <input type="date" class="form-control" id="contractStartDate" placeholder="contract start date" required>
+      <input type="date" class="form-control" id="contractStartDate" placeholder="contract start date" required formControlName="contractStartDate">
+      <div *ngIf="createForm.get('contractStartDate')?.touched ||createForm.get('contractStartDate').dirty">
+        <small class="text-danger" *ngIf="createForm.get('contractStartDate')?.hasError('required')">Ngày sinh nhật khách hàng không được để
+          trống.</small>
+      </div>
     </div>
     <div class="mb-3">
       <label class="form-label" for="contractEndDate">Contract End Date</label>
-      <input type="date" class="form-control" id="contractEndDate" placeholder="contract end date" required>
+      <input type="date" class="form-control" id="contractEndDate" placeholder="contract end date" formControlName="contractEndDate">
+      <div *ngIf="createForm.get('contractEndDate')?.touched ||createForm.get('contractEndDate').dirty">
+        <small class="text-danger" *ngIf="createForm.get('contractEndDate')?.hasError('required')">Ngày sinh nhật khách hàng không được để
+          trống.</small>
+        <small class="text-danger" *ngIf="createForm.get('contractEndDate')?.hasError('date1')">Ngayf k dc nhor hon không được để
+          trống.</small>
+      </div>
     </div>
-    <div class="mb-3">
+    <!--<div class="mb-3">
       <label class="form-label" for="contractDeposit">Contract Deposit</label>
       <input type="text" class="form-control" id="contractDeposit" placeholder="contract deposit" required>
     </div>
@@ -41,7 +50,7 @@
       <option value="nguyenthia">House 1</option>
       <option value="nguyenthib">Villa 1</option>
       <option value="nguyenthic">Room 1</option>
-    </select>
+    </select>-->
     <input type="submit" value="Create"/>
   </form>
 </div>

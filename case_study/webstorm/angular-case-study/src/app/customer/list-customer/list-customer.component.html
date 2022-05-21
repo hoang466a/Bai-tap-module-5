@@ -1,14 +1,17 @@
 
-<body>
+
 <h3>Customer List</h3>
 <p>
   <a href="customer/create">
     Add new customer
   </a>
-<!--<form>
-  <input type="search" name="keyword">
-  <button>Search</button>
-</form>-->
+<div style="margin-right: 30px; display: flex; align-items: center">
+  <input type="text" class="form-control" id="search" name="name" #customerName placeholder="Enter name to search">
+  <label for="search"><i class="fa fa-search" style="margin-left: 10px"></i></label>
+  <button (click)="search(customerName.value)">Search</button>
+</div>
+
+
 
 
 <table id = "object_s">
@@ -31,7 +34,7 @@
   <tr *ngFor="let cus of customerList |paginate: { itemsPerPage: 3, currentPage: p }">
     <td>{{cus.customerName}}</td>
     <td>{{cus.customerBirthday}}</td>
-    <td>{{cus.customerGender ? 'Female': 'Male'}}</td>
+    <td>{{cus.customerGender}}</td>
     <td>{{cus.customerCode}}</td>
     <td>{{cus.customerIdCard}}</td>
     <td>{{cus.customerPhone}}</td>
@@ -39,14 +42,32 @@
     <td>{{cus.customerAddress}}</td>
     <td>{{cus.customerType.nameCustomerType}}</td>
     <td><a [routerLink]="['/customer/edit',cus.id]" class="btn btn-info">Edit</a></td>
-    <td><a href="" class="btn btn-success">Delete</a></td>
+    <td><button type="button" (click)="sendCustomer(cus.id,cus.customerName)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Delete
+    </button></td>
+
   </tr>
   </tbody>
 </table>
 
-
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn có muốn xóa khách hàng {{nameCustomer}} không?
+      </div>
+      <div class="modal-footer">
+        <button #closeModal type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button (click)="delete(closeModal)" type="button" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
-</body>
 

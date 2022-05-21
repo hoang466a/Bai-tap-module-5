@@ -27,8 +27,8 @@ export class CreateServiceVillaComponent implements OnInit {
     rentType: new FormControl('',[Validators.required]),
     standardRoom: new FormControl('',[Validators.required]),
     descriptionOtherConvenience: new FormControl('',[Validators.required]),
-    poolArea: new FormControl('',[Validators.required]),
-    numberOfFloor: new FormControl('',[Validators.required,Validators.pattern("^(-?)[0-9]*$")]),
+    poolArea: new FormControl('',[Validators.required,Validators.pattern("^(-?)[0-9]*$"),this.ValidationCustomPoint]),
+    numberOfFloor: new FormControl('',[Validators.required,Validators.pattern("^(-?)[0-9]*$"),this.ValidationCustomPoint]),
     serviceType: new FormControl('',[Validators.required])
   })
 

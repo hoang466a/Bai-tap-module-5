@@ -51,8 +51,8 @@
     <div>
     <label class="form-label" >Gender</label>
     <select class="form-select mb-3" id="customerGender" name="customerGender" aria-label="form-select-lg example" formControlName="customerGender">
-      <option value="Female">Female</option>
-      <option value="Male">Male</option>
+      <option *ngFor="let gender of genderList"
+              [ngValue]="gender">{{gender}}</option>
     </select>
       <div *ngIf="createForm.get('customerGender')?.touched ||createForm.get('customerGender').dirty">
         <small class="text-danger" *ngIf="createForm.get('customerGender')?.hasError('required')">Giới tính khách hàng không được để
@@ -67,6 +67,7 @@
         <small class="text-danger" *ngIf="createForm.get('customerIdCard')?.hasError('required')">CMND không được để
           trống.</small>
         <small class="text-danger" *ngIf="createForm.get('customerIdCard')?.hasError('pattern')">CMND khách hàng không đúng địng dạng</small>
+        <small class="text-danger" *ngIf="createForm.get('customerIdCard')?.hasError('notunder0')">Số không được dưới 0</small>
       </div>
     </div>
 
