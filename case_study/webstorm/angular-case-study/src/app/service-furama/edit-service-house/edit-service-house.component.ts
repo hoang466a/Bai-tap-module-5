@@ -25,9 +25,6 @@ export class EditServiceHouseComponent implements OnInit {
     serviceCost: new FormControl('',[Validators.required]),
     serviceMaxPeople: new FormControl('', [Validators.required]),
     rentType: new FormControl('',[Validators.required]),
-    standardRoom: new FormControl('',[Validators.required]),
-    descriptionOtherConvenience: new FormControl('',[Validators.required]),
-    numberOfFloor: new FormControl('',[Validators.required,Validators.pattern("^(-?)[0-9]*$"),this.ValidationCustomPoint]),
     serviceType: new FormControl('',[Validators.required])
   })
 
@@ -48,9 +45,10 @@ export class EditServiceHouseComponent implements OnInit {
 
   }
 
-  createVilla() {
+
+
+
+  editHouse() {
 
   }
-
-
 }

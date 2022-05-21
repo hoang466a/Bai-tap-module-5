@@ -48,7 +48,7 @@ export class CreateServiceComponent implements OnInit {
 
   }
 
-  createVilla() {
+  createHouse() {
 
   }
 

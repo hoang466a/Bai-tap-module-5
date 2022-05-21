@@ -10,9 +10,9 @@
 
 <body>
 <a class="btn btn-primary" href="#" role="button">Link</a>
-<h2>Create Villa</h2>
+<h2>Edit Room</h2>
 <div class="m-4">
-  <form [formGroup]="createForm" (ngSubmit)="createVilla()">
+  <form [formGroup]="createForm" (ngSubmit)="editHouse()">
     <div class="mb-3">
       <label class="form-label" for="nameService">Name Service</label>
       <input type="text" class="form-control" id="nameService" formControlName="nameService" placeholder="Name Service">
@@ -71,27 +71,6 @@
       <div *ngIf="createForm.get('standardRoom').touched ||createForm.get('standardRoom').dirty">
         <small class="text-danger" *ngIf="createForm.get('standardRoom')?.hasError('required')">Không được để
           trống!</small>
-      </div>
-    </div>
-
-
-    <div class="mb-3">
-      <label class="form-label" for="descriptionOfService">Description of service</label>
-      <input type="text" class="form-control" formControlName="descriptionOfService" id="descriptionOfService" placeholder="Description of service" required>
-      <div *ngIf="createForm.get('descriptionOfService').touched ||createForm.get('descriptionOfService').dirty">
-        <small class="text-danger" *ngIf="createForm.get('descriptionOfService')?.hasError('required')">Không được để
-          trống!</small>
-      </div>
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label" for="numberOfFloor">Number Of Floor</label>
-      <input type="text" class="form-control" formControlName="" id="numberOfFloor" placeholder="Number Of Floor" required>
-      <div *ngIf="createForm.get('numberOfFloor').touched ||createForm.get('numberOfFloor').dirty">
-        <small class="text-danger" *ngIf="createForm.get('numberOfFloor')?.hasError('required')">không được để
-          trống!</small>
-        <small class="text-danger" *ngIf="createForm.get('numberOfFloor')?.hasError('pattern')">Số tầng không đúng định dạng!</small>
-        <small class="text-danger" *ngIf="createForm.get('numberOfFloor')?.hasError('notunder0')">Số tầng không được nhỏ hơn 0!</small>
       </div>
     </div>
 
