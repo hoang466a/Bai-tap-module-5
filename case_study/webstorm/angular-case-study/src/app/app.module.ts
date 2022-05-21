@@ -21,6 +21,9 @@ import { EditServiceVillaComponent } from './service-furama/edit-service-villa/e
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
+import {ModuleServiceModule} from "./service-furama/module-service/module-service.module";
+import {CustomerModule} from "./customer/customer/customer.module";
+import {ContractModuleModule} from "./contract/contract-module/contract-module.module";
 
 
 @NgModule({
@@ -29,18 +32,6 @@ import {HttpClientModule} from "@angular/common/http";
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    ListServiceComponent,
-    EditServiceComponent,
-    CreateServiceComponent,
-    ListCustomerComponent,
-    EditCustomerComponent,
-    CreateCustomerComponent,
-    CreateContractComponent,
-    ListContractComponent,
-    CreateServiceRoomComponent,
-    CreateServiceVillaComponent,
-    EditServiceHouseComponent,
-    EditServiceVillaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +39,10 @@ import {HttpClientModule} from "@angular/common/http";
     NgxPaginationModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModuleServiceModule,
+    CustomerModule,
+    ContractModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
