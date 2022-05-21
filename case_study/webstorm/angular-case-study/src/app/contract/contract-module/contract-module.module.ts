@@ -8,8 +8,12 @@ import {ListContractComponent} from "../list-contract/list-contract.component";
 @NgModule({
   declarations: [CreateContractComponent,
     ListContractComponent],
+  exports: [
+    CreateContractComponent,
+    ListContractComponent
+  ],
   imports: [
     CommonModule
-  ]
+  ],
 })
 export class ContractModuleModule { }

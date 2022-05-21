@@ -10,12 +10,14 @@ import {FacilityServiceService} from '../../../services/facility-service.service
   styleUrls: ['./list-service.component.css']
 })
 export class ListServiceComponent implements OnInit {
-  facilityList: Facility[];
+  ngOnInit(): void {
+  }
+  /*facilityList: Facility[];
   p: number = 1;
 
   constructor(private facilityService: FacilityServiceService) {this.facilityList = facilityService.faciList(); }
   collection: any[] =this.facilityList;
   ngOnInit(): void {
-  }
+  }*/
 
 }

@@ -11,7 +11,9 @@ import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/form
   styleUrls: ['./edit-service-house.component.css']
 })
 export class EditServiceHouseComponent implements OnInit {
-  serviceTypeList: ServiceType[];
+  ngOnInit(): void {
+  }
+  /*serviceTypeList: ServiceType[];
   rentTypeServiceList: RentType[];
   constructor(private serviceTypeService:ServiceTypeService,
               private rentTypeService: RentTypeService) {
@@ -50,5 +52,5 @@ export class EditServiceHouseComponent implements OnInit {
 
   editHouse() {
 
-  }
+  }*/
 }

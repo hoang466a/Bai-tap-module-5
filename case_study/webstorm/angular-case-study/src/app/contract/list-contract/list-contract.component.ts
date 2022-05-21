@@ -8,8 +8,10 @@ import {ContractServiceService} from '../../../services/contract-service.service
   styleUrls: ['./list-contract.component.css']
 })
 export class ListContractComponent implements OnInit {
+/*
   contractList: Contract[];
   p: number = 1;
+*/
 
 
 

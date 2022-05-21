@@ -11,7 +11,9 @@ import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/form
   styleUrls: ['./create-service-room.component.css']
 })
 export class CreateServiceRoomComponent implements OnInit {
-  serviceTypeList: ServiceType[];
+  ngOnInit(): void {
+  }
+  /*serviceTypeList: ServiceType[];
   rentTypeServiceList: RentType[];
   constructor(private serviceTypeService:ServiceTypeService,
               private rentTypeService: RentTypeService) {
@@ -49,5 +51,5 @@ export class CreateServiceRoomComponent implements OnInit {
 
   createRoom() {
 
-  }
+  }*/
 }

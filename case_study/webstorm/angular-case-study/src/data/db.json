@@ -1,21 +1,6 @@
 {
   "customer": [
     {
-      "id": 8,
-      "customerName": "Nguyễn Văn H",
-      "customerCode": "KH-0008",
-      "customerBirthday": "2022-05-06",
-      "customerGender": "Male",
-      "customerIdCard": "123456789",
-      "customerPhone": "0912457842",
-      "customerEmail": "hoangtn92@gmail.com",
-      "customerAddress": "49 Hà Huy Tập",
-      "customerType": {
-        "id": 1,
-        "nameCustomerType": "Diamond"
-      }
-    },
-    {
       "id": 9,
       "customerName": "Nguyễn Văn I",
       "customerCode": "KH-0009",

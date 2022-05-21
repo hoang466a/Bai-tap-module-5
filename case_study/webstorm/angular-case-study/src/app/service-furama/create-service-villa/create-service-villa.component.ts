@@ -11,7 +11,9 @@ import {RentTypeService} from "../../../services/rent-type.service";
   styleUrls: ['./create-service-villa.component.css']
 })
 export class CreateServiceVillaComponent implements OnInit {
-  serviceTypeList: ServiceType[];
+  ngOnInit(): void {
+  }
+  /*serviceTypeList: ServiceType[];
   rentTypeServiceList: RentType[];
   constructor(private serviceTypeService:ServiceTypeService,
   private rentTypeService: RentTypeService) {
@@ -51,5 +53,5 @@ export class CreateServiceVillaComponent implements OnInit {
 
   createVilla() {
 
-  }
+  }*/
 }
