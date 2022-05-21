@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {from} from 'rxjs';
+import {ICustomer} from "../../../models/customer/ICustomer";
+import {Facility} from "../../../models/service_furama/Facility";
 
 @Component({
   selector: 'app-create-contract',
@@ -10,11 +12,25 @@ import {from} from 'rxjs';
 export class CreateContractComponent implements OnInit {
   // @ts-ignore
   createForm = new FormGroup({
-    id: new FormControl(),
+    contractId: new FormControl(),
     contractStartDate: new FormControl('2020-02-01',[Validators.required,this.ValidationDatebefore]),
     contractEndDate: new FormControl('2020-01-01',[Validators.required]),
-
+    facility: new FormControl(),
+    customer: new FormControl(),
+    contractDeposit: new FormControl('',[Validators.required,Validators.pattern("^(-?)[0-9]*$"),this.ValidationCustomPoint]),
   })
+
+  ValidationCustomPoint(point: AbstractControl){
+    let value=point.value;
+    if(value<0){
+      return {'notunder0':true};
+    } else {
+      return null;
+    }
+
+  }
+
+
 
   ValidationDatebefore(formGroup: AbstractControl):ValidationErrors|null{
       const fromDate = formGroup.get('contractStartDate');

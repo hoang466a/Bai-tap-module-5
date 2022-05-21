@@ -18,6 +18,16 @@
 <div class="m-4">
   <form [formGroup]="createForm" >
     <div class="mb-3">
+      <label class="form-label" for="contractDeposit">Contract Deposit</label>
+      <input type="text" class="form-control" formControlName="" id="contractDeposit" placeholder="Contract Deposit" required>
+      <div *ngIf="createForm.get('contractDeposit').touched ||createForm.get('contractDeposit').dirty">
+        <small class="text-danger" *ngIf="createForm.get('contractDeposit')?.hasError('required')">không được để
+          trống!</small>
+        <small class="text-danger" *ngIf="createForm.get('contractDeposit')?.hasError('pattern')">Tiền cọc không đúng định dạng!</small>
+        <small class="text-danger" *ngIf="createForm.get('contractDeposit')?.hasError('notunder0')">Tiền cọc không được nhỏ hơn 0!</small>
+      </div>
+    </div>
+    <div class="mb-3">
       <label class="form-label" for="contractStartDate">Contract Start Date</label>
       <input type="date" class="form-control" id="contractStartDate" placeholder="contract start date" required formControlName="contractStartDate">
       <div *ngIf="createForm.get('contractStartDate')?.touched ||createForm.get('contractStartDate').dirty">
@@ -35,22 +45,16 @@
           trống.</small>
       </div>
     </div>
-    <!--<div class="mb-3">
-      <label class="form-label" for="contractDeposit">Contract Deposit</label>
-      <input type="text" class="form-control" id="contractDeposit" placeholder="contract deposit" required>
+    <div class="mb-3">
+      <label class="form-label" for="facility">Facility</label>
+      <input type="text" class="form-control" formControlName="facility" id="facility" placeholder="Facility" required>
+
     </div>
-    <label class="form-label" for="employeeList">Employee List</label>
-    <select class="form-select mb-3" aria-label=".form-select-lg example">
-      <option value="nguyenthia">Nguyễn Văn A</option>
-      <option value="nguyenthib">Nguyễn Thị B</option>
-      <option value="nguyenthic">Nguyễn Thị C</option>
-    </select>
-    <label class="form-label" for="serviceList">Service List</label>
-    <select class="form-select mb-3" aria-label=".form-select-lg example">
-      <option value="nguyenthia">House 1</option>
-      <option value="nguyenthib">Villa 1</option>
-      <option value="nguyenthic">Room 1</option>
-    </select>-->
+    <div class="mb-3">
+      <label class="form-label" for="customer">customer</label>
+      <input type="text" class="form-control" formControlName="customer" id="customer" placeholder="customer" required>
+    </div>
+
     <input type="submit" value="Create"/>
   </form>
 </div>
