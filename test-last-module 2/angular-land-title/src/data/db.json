@@ -17,6 +17,10 @@
   "landTitle": [
     {
       "id": 1,
+      "category": {
+        "id": 1,
+        "nameCategory": "Nhà Đất"
+      },
       "local": "Hà Nội",
       "level": "Cá nhân",
       "titleType": "Cần bán",
@@ -29,24 +33,7 @@
       "price": "1000000000",
       "priceCheck": true,
       "imageUrl": "https://nhadepsang.com.vn/images/2017/08/20-hinh-anh-noi-bat-cho-mau-nha-dep-1-tang-o-nong-thon-3.jpg",
-      "datePost": "2022-05-18",
-      "category": {
-        "id": 1,
-        "nameCategory": "Nhà Đất"
-      },
-
-
-
-
-
-
-
-
-
-
-
-
-
+      "datePost": "2022-05-18"
     },
     {
       "id": 2,

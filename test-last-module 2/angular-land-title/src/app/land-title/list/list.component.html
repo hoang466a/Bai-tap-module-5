@@ -1,0 +1,41 @@
+
+
+<h3>Customer List</h3>
+<p>
+  <a href="">
+    Add new customer
+  </a>
+<!--<div style="margin-right: 30px; display: flex; align-items: center">
+  <input type="text" class="form-control" id="search" name="name" #customerName placeholder="Enter name to search">
+  <label for="search"><i class="fa fa-search" style="margin-left: 10px"></i></label>
+  <button (click)="search(customerName.value)">Search</button>
+</div>-->
+
+<table id = "object_s">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Type of title</th>
+    <th>Category</th>
+    <th>Date post</th>
+    <th>Status</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let land of landTitleList">
+      <td>{{land.title}}</td>
+      <td>{{land.titleType}}</td>
+      <td>{{land.category.nameCategory}}</td>
+      <td>{{land.datePost|date: 'dd/MM/yyyy'}}</td>
+      <td>{{land.status}}</td>
+      <!--<td><a [routerLink]="['/customer/edit']" class="btn btn-info">Edit</a></td>-->
+      <td>Delete<button></button></td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+

@@ -80,7 +80,7 @@ export class EditCustomerComponent implements OnInit {
   }
 
   compareFn(t1: ICustomerType, t2: ICustomerType):boolean {
-    return t1 && t2 ? t1.id === t2.id : t1 === t2;
+    return t1 && t2 ? t1.customerTypeId === t2.customerTypeId : t1 === t2;
   }
 
 
