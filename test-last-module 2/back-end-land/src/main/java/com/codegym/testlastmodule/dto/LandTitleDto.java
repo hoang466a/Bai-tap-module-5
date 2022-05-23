@@ -1,12 +1,15 @@
 package com.codegym.testlastmodule.dto;
 
 import com.codegym.testlastmodule.model.Category;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 import java.util.Date;
 
-public class LandTitleDto {
+public class LandTitleDto implements Validator {
     private Integer id;
     private String local;
     private String level;
@@ -144,5 +147,15 @@ public class LandTitleDto {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+
     }
 }

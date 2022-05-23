@@ -1,6 +1,10 @@
 package com.codegym.testlastmodule.dto;
 
-public class CategoryDto {
+
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
+public class CategoryDto implements Validator {
     private int idCategory;
     private String nameCategory;
 
@@ -21,5 +25,15 @@ public class CategoryDto {
 
     public void setNameCategory(String nameCategory) {
         this.nameCategory = nameCategory;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+
     }
 }
