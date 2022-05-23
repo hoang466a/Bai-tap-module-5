@@ -29,6 +29,8 @@ createForm = new FormGroup({
   customerType: new FormControl('',[Validators.required])
 })
 
+  today:Date=new Date();
+
   constructor(private customerTypeService: CustomerTypeService,
               private customerServiceService:CustomerServiceService,
               private router:Router) {
@@ -58,6 +60,8 @@ createForm = new FormGroup({
   ngOnInit(): void {
     this.customerTypeService.getAllCustomerType().subscribe(data =>{
       this.customerTypes=data});
+
+
   }
 
 
@@ -71,12 +75,12 @@ createForm = new FormGroup({
     if(this.createForm.invalid){
       alert("form có lỗi!");
     }else{
-    this.customerServiceService.saveCustomer(customer).subscribe(data => {
-      this.createForm.reset();
-      alert('Tạo thành công');
-      this.router.navigate(['/customer/list']);
-    }, e => {
-      console.log(e);
-    });}
+      this.customerServiceService.saveCustomer(customer).subscribe(data => {
+        this.createForm.reset();
+        alert('Tạo thành công');
+        this.router.navigate(['/customer/list']);
+      }, e => {
+        console.log(e);
+      });}
   }
 }

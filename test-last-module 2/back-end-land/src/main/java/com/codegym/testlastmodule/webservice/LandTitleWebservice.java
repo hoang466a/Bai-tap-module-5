@@ -46,7 +46,7 @@ public class LandTitleWebservice {
     public ResponseEntity<Map<String, String>> createLandTitle(@Valid @RequestBody LandTitleDto landTitleDto,
                                                                BindingResult bindingResult) {
         Map<String,String> mapErrors=null;
-        landTitleDto.validate();
+        landTitleDto.validate(landTitleDto,bindingResult);
 
         if (bindingResult.hasFieldErrors()) {
             mapErrors = bindingResult.getFieldErrors().stream().collect(Collectors.toMap(e -> e.getField(), e -> e.getDefaultMessage()));
