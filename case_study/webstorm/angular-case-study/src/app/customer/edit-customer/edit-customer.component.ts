@@ -5,6 +5,7 @@ import {CustomerServiceService} from '../../../services/customer-service.service
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ICustomerType} from '../../../models/customerType/ICustomerType';
 import {ICustomer} from '../../../models/customer/ICustomer';
+import {DatePipe, formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-edit-customer',
@@ -35,7 +36,8 @@ export class EditCustomerComponent implements OnInit {
   constructor(private customerTypeService: CustomerTypeService,
               private customerServiceService: CustomerServiceService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private datepipe: DatePipe) {
 
 
     this.editFrom = new FormGroup({
@@ -63,14 +65,14 @@ export class EditCustomerComponent implements OnInit {
       this.customerTypes = data;
       this.genderList=this.customerServiceService.genderList;
       console.log(this.customerTypes);
-        this.customerServiceService.findById(this.id).subscribe(data1 => {
+        this.customerServiceService.findById(this.id).subscribe((data1:any) => {
           this.customer = data1;
+          // @ts-ignore
+          this.customer.customerBirthday=formatDate(this.customer.customerBirthday,'yyyy-MM-dd','en_US');
           console.log(this.customer);
           this.editFrom.patchValue(this.customer);
           console.log(this.editFrom.value);
         });
-
-
     });
 
   }
@@ -78,6 +80,8 @@ export class EditCustomerComponent implements OnInit {
   getCustomer() {
 
   }
+
+
 
   compareFn(t1: ICustomerType, t2: ICustomerType):boolean {
     return t1 && t2 ? t1.customerTypeId === t2.customerTypeId : t1 === t2;

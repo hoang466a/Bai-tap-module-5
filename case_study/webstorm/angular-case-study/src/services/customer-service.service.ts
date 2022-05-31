@@ -11,9 +11,9 @@ import {ICustomer} from '../models/customer/ICustomer';
   providedIn: 'root'
 })
 export class CustomerServiceService {
-  URL_LIST = 'http://localhost:8080/customer/';
+  URL_LIST = 'http://localhost:8080/customer';
 
-  genderList=["Male", "Female","Gay","Lesbian","Other"];
+  genderList=["nam", "nữ","gay","les","other"];
 
   constructor(private http: HttpClient) {
   }

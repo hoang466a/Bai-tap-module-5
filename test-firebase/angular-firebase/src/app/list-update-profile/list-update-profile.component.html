@@ -1,0 +1,16 @@
+<a href="/create">create</a>
+<h3>List PERSON</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Picture</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let per of personList">
+    <td>{{per.id}}</td>
+    <td><img src="{{per.imgUrl}}" alt="ảnh" width="400" height="300"></td>
+  </tr>
+  </tbody>
+</table>

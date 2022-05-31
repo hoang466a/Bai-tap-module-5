@@ -60,8 +60,6 @@ createForm = new FormGroup({
   ngOnInit(): void {
     this.customerTypeService.getAllCustomerType().subscribe(data =>{
       this.customerTypes=data});
-
-
   }
 
 

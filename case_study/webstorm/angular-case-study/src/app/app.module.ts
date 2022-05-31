@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ModuleServiceModule} from "./service-furama/module-service/module-service.module";
 import {CustomerModule} from "./customer/customer/customer.module";
 import {ContractModuleModule} from "./contract/contract-module/contract-module.module";
+import {DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import {ContractModuleModule} from "./contract/contract-module/contract-module.m
     CustomerModule,
     ContractModuleModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

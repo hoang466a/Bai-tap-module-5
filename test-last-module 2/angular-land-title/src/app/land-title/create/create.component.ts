@@ -26,7 +26,7 @@ export class CreateComponent implements OnInit {
     direction: new FormControl('',),
     title: new FormControl('',),
     content: new FormControl('',),
-    price: new FormControl('', [Validators.required, Validators.pattern("(84|0)+(9[0|1])+([0-9]{7})"),this.ValidationPrice]),
+    price: new FormControl('', [Validators.required, Validators.pattern("^(([0]*[1-9][0-9]*)|[1-9][0-9]*)$"),this.ValidationPrice]),
     priceCheck: new FormControl('',),
     imageUrl: new FormControl('',),
     datePost: new FormControl('',)
@@ -43,21 +43,25 @@ export class CreateComponent implements OnInit {
   }
 
   ValidationArea(point: AbstractControl) {
+    if(point.value!=""){
     let value = +point.value;
     if (value < 20) {
       return {'notunder20': true};
     } else {
       return null;
-    }
+    }}
+    else{return null}
   }
 
   ValidationPrice(point: AbstractControl){
+    if(point.value!=""){
     let value=+point.value;
     if(value<=100000000){
       return {'notunder100mil':true};
     }else{
       return null;
-    }
+    }}
+    else{return null}
   }
 
 

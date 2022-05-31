@@ -9,7 +9,7 @@ import {ICustomerType} from '../models/customerType/ICustomerType';
   providedIn: 'root'
 })
 export class CustomerTypeService {
-  URL_TYPE = 'http://localhost:3000/customerType';
+  URL_TYPE = 'http://localhost:8080/customerType/';
 
   getAllCustomerType(): Observable<ICustomerType[]> {
     return this.http.get<ICustomerType[]>(this.URL_TYPE);

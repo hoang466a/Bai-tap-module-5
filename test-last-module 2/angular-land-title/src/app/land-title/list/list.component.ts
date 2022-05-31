@@ -24,5 +24,4 @@ export class ListComponent implements OnInit {
     {this.landTitleList=data.content;
       }
     )}
-
 }

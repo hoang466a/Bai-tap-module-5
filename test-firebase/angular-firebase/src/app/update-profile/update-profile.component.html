@@ -1,0 +1,12 @@
+<a href="/list">list</a>
+<form [formGroup]="createForm" (ngSubmit)="createPerson()">
+<div>
+<label for="imgUrl">Image Url</label>
+<input type="file" class="form-control" id="imgUrl" (change)="showPreview($event)" >
+  <small class="text-danger" *ngIf="numberOfFile==0 && checkSubmit==1">file không được để trống</small>
+</div>
+  <div>
+    <button type="submit" (click)="clickSubmit()">Submit</button>
+  </div>
+
+</form>
